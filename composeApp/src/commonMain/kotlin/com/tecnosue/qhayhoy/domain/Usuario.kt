@@ -18,5 +18,6 @@ data class Usuario(
     val nombre: String = "",
     val email: String = "",
     val fechaRegistro: Instant? = null,
-    val casasIds: List<String> = emptyList()
+    val casasIds: List<String> = emptyList(),
+    val casaActivaId: String? = null
 )
