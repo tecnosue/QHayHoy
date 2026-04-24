@@ -6,26 +6,23 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.googleServices)
-
+    alias(libs.plugins.kotlinxSerialization)
 }
 
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
-            // Firebase — solo en Android
-            implementation(project.dependencies.platform(libs.firebase.bom))
-            implementation(libs.firebase.auth)
-            implementation(libs.firebase.firestore)
         }
         commonMain.dependencies {
+            // Compose Multiplatform
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
@@ -34,6 +31,24 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // Navegación
+            implementation(libs.navigation.compose)
+
+            // Firebase multiplataforma (GitLive)
+            implementation(libs.gitlive.firebase.auth)
+            implementation(libs.gitlive.firebase.firestore)
+            implementation(libs.gitlive.firebase.common)
+
+            // Corrutinas y serialización
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.serialization.json)
+            implementation(libs.kotlinx.datetime)
+
+            // Inyección de dependencias
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -63,12 +78,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
     debugImplementation(libs.compose.uiTooling)
 }
-
