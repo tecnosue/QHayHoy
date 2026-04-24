@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390027860149",
+    "project_id": "qhayhoy-6e90f",
+    "storage_bucket": "qhayhoy-6e90f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390027860149:android:3cd01bad4f36e9cecc46fc",
+        "android_client_info": {
+          "package_name": "com.tecnosue.qhayhoy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcU2wzy8c_aP55hUAPIxP2muJ9j1gg2KA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
