@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.composables.icons.lucide.Compass
 import com.tecnosue.qhayhoy.domain.OrigenReceta
 import com.tecnosue.qhayhoy.domain.Receta
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
@@ -55,7 +56,9 @@ fun ListaRecetasScreen(
     recetaViewModel: RecetaViewModel,
     onVolver: () -> Unit,
     onNuevaReceta: () -> Unit,
-    onRecetaSeleccionada: (String) -> Unit
+    onRecetaSeleccionada: (String) -> Unit,
+    onIrADescubrir: () -> Unit
+
 ) {
     val authState by authViewModel.uiState.collectAsState()
     val recetaState by recetaViewModel.uiState.collectAsState()
@@ -78,6 +81,14 @@ fun ListaRecetasScreen(
                         Icon(
                             imageVector = Lucide.ArrowLeft,
                             contentDescription = "Volver"
+                        )
+                    }
+                },
+                actions = {
+                    IconButton(onClick = onIrADescubrir) {
+                        Icon(
+                            imageVector = Lucide.Compass,
+                            contentDescription = "Descubrir recetas"
                         )
                     }
                 },

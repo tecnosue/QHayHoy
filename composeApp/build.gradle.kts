@@ -58,6 +58,10 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.ktor.client.logging)
 
+            // Carga de imágenes async multiplataforma
+            implementation(libs.coil3.compose)
+            implementation(libs.coil3.network.ktor)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

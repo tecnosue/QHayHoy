@@ -36,4 +36,12 @@ object Rutas {
 
     @Serializable
     data class DetalleReceta(val recetaId: String)
+
+    // --- Descubrir recetas externas (RF3.2 / RF3.3) ---
+
+    @Serializable
+    data object DescubrirRecetas
+
+    @Serializable
+    data class PreviewRecetaExterna(val idExterno: String)
 }

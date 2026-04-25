@@ -14,9 +14,11 @@ import com.tecnosue.qhayhoy.ui.auth.RegistroScreen
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
 import com.tecnosue.qhayhoy.ui.casa.GestionCasaScreen
 import com.tecnosue.qhayhoy.ui.casa.PrincipalScreen
+import com.tecnosue.qhayhoy.ui.receta.DescubrirRecetasScreen
 import com.tecnosue.qhayhoy.ui.receta.DetalleRecetaScreen
 import com.tecnosue.qhayhoy.ui.receta.EditorRecetaScreen
 import com.tecnosue.qhayhoy.ui.receta.ListaRecetasScreen
+import com.tecnosue.qhayhoy.ui.receta.PreviewRecetaExternaScreen
 import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
@@ -131,6 +133,9 @@ fun AppNavegacion() {
                 },
                 onRecetaSeleccionada = { recetaId ->
                     navController.navigate(Rutas.DetalleReceta(recetaId))
+                },
+                onIrADescubrir = {
+                    navController.navigate(Rutas.DescubrirRecetas)
                 }
             )
         }
@@ -158,5 +163,35 @@ fun AppNavegacion() {
                 }
             )
         }
+        // --- Pantallas de descubrir recetas externas (RF3.2 / RF3.3) ---
+
+        composable<Rutas.DescubrirRecetas> {
+            DescubrirRecetasScreen(
+                recetaViewModel = recetaViewModel,
+                onVolver = { navController.popBackStack() },
+                onRecetaSeleccionada = { idExterno ->
+                    navController.navigate(Rutas.PreviewRecetaExterna(idExterno))
+                }
+            )
+        }
+
+        composable<Rutas.PreviewRecetaExterna> { backStackEntry ->
+            val args = backStackEntry.toRoute<Rutas.PreviewRecetaExterna>()
+            PreviewRecetaExternaScreen(
+                authViewModel = authViewModel,
+                recetaViewModel = recetaViewModel,
+                idExterno = args.idExterno,
+                onVolver = { navController.popBackStack() },
+                onImportada = {
+                    // Tras importar, volvemos a la lista de la Casa
+                    navController.popBackStack(
+                        route = Rutas.ListaRecetas,
+                        inclusive = false
+                    )
+                }
+            )
+        }
     }
+
+
 }
