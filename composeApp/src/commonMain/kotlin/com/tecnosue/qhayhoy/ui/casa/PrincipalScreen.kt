@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -35,7 +36,9 @@ fun PrincipalScreen(
     authViewModel: AuthViewModel,
     casaViewModel: CasaViewModel,
     onCerrarSesion: () -> Unit,
-    onIrARecetas: () -> Unit
+    onIrARecetas: () -> Unit,
+    onCambiarDeCasa: () -> Unit
+
 ) {
     val authState by authViewModel.uiState.collectAsState()
     val casaState by casaViewModel.uiState.collectAsState()
@@ -128,6 +131,14 @@ fun PrincipalScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Mis recetas")
+        }
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedButton(
+            onClick = onCambiarDeCasa,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Cambiar de Casa")
         }
 
         Spacer(modifier = Modifier.height(16.dp))

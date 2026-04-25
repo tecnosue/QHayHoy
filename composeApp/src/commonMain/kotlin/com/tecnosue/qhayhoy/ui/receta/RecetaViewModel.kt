@@ -6,6 +6,7 @@ import com.tecnosue.qhayhoy.data.RecetaRepository
 import com.tecnosue.qhayhoy.domain.Ingrediente
 import com.tecnosue.qhayhoy.domain.OrigenReceta
 import com.tecnosue.qhayhoy.domain.Receta
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -45,12 +46,35 @@ class RecetaViewModel(
      * Inicia la observación de recetas de la Casa indicada.
      * Se llama desde la pantalla de lista al tener disponible casaActivaId.
      */
+    /**
+     * Job que mantiene la suscripción al Flow de recetas de la Casa actual.
+     * Permite cancelar la observación anterior al cambiar de Casa, evitando
+     * que dos flujos compitan emitiendo en paralelo.
+     */
+    private var jobObservacion: Job? = null
+    private var casaObservadaId: String? = null
+
+    /**
+     * Inicia la observación reactiva de recetas para la Casa indicada.
+     * Si ya estaba observando esa misma Casa, no hace nada (idempotente).
+     * Si estaba observando otra Casa, cancela el flujo anterior y limpia
+     * el estado para evitar mostrar datos obsoletos durante la transición.
+     */
     fun observarRecetas(casaId: String) {
-        recetaRepository.observarRecetasDeCasa(casaId)
+
+        if (casaObservadaId == casaId)  return
+
+
+        jobObservacion?.cancel()
+        _uiState.value = _uiState.value.copy(recetas = emptyList())
+
+        casaObservadaId = casaId
+        jobObservacion = recetaRepository.observarRecetasDeCasa(casaId)
             .onEach { lista ->
                 _uiState.value = _uiState.value.copy(recetas = lista)
             }
             .launchIn(viewModelScope)
+
     }
 
     // --- Gestión de la receta en edición ---

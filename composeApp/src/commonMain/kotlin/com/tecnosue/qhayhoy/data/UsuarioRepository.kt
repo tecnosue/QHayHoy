@@ -5,6 +5,8 @@ import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import dev.gitlive.firebase.firestore.firestore
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.datetime.Clock
 
@@ -76,19 +78,34 @@ class UsuarioRepository {
      *
      * Se usa desde el ViewModel para decidir si mostrar Login o la pantalla principal.
      */
+    /**
+     * Observa el estado de autenticación del usuario actual y, mientras
+     * haya sesión iniciada, mantiene también una suscripción reactiva al
+     * documento de Firestore de ese usuario. Cualquier cambio en el
+     * documento (por ejemplo, casaActivaId, casasIds o nombre) se propaga
+     * automáticamente.
+     *
+     * Cuando el usuario cierra sesión, el Flow emite null.
+     */
     fun observarUsuarioActual(): Flow<Usuario?> {
-        return auth.authStateChanged.map { firebaseUser ->
+        return auth.authStateChanged.flatMapLatest { firebaseUser ->
             if (firebaseUser == null) {
-                null
+                flowOf(null)
             } else {
-                try {
-                    val snapshot = firestore.collection("usuarios")
-                        .document(firebaseUser.uid)
-                        .get()
-                    snapshot.data(Usuario.serializer())
-                } catch (e: Exception) {
-                    null
-                }
+                firestore.collection("usuarios")
+                    .document(firebaseUser.uid)
+                    .snapshots
+                    .map { snapshot ->
+                        try {
+                            if (snapshot.exists) {
+                                snapshot.data(Usuario.serializer())
+                            } else {
+                                null
+                            }
+                        } catch (e: Exception) {
+                            null
+                        }
+                    }
             }
         }
     }

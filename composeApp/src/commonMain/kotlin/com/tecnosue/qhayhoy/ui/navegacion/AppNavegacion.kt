@@ -110,6 +110,12 @@ fun AppNavegacion() {
                 },
                 onIrARecetas = {
                     navController.navigate(Rutas.ListaRecetas)
+                },
+
+                onCambiarDeCasa = {
+                    navController.navigate(Rutas.GestionCasa) {
+                        popUpTo(Rutas.Principal) { inclusive = true }
+                    }
                 }
             )
         }

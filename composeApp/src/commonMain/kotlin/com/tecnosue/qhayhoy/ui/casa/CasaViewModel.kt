@@ -143,6 +143,7 @@ class CasaViewModel(
      * Se llama al pulsar una Casa de la lista "Mis Casas".
      */
     fun seleccionarCasa(usuarioId: String, casaId: String) {
+
         viewModelScope.launch {
             try {
                 casaRepository.cambiarCasaActiva(usuarioId, casaId)

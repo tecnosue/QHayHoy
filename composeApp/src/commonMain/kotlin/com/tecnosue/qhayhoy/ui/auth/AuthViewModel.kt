@@ -42,8 +42,6 @@ class AuthViewModel(
     val uiState: StateFlow<AuthUiState> = _uiState.asStateFlow()
 
     init {
-        // Observamos el estado de autenticación. Si el usuario ya tenía sesión
-        // iniciada (por ejemplo, abrió la app otro día), lo detectamos aquí.
         usuarioRepository.observarUsuarioActual()
             .onEach { usuario ->
                 _uiState.value = _uiState.value.copy(usuarioActual = usuario)
