@@ -138,6 +138,22 @@ class CasaViewModel(
         }
     }
 
+    /**
+     * Marca como activa la Casa indicada para el usuario.
+     * Se llama al pulsar una Casa de la lista "Mis Casas".
+     */
+    fun seleccionarCasa(usuarioId: String, casaId: String) {
+        viewModelScope.launch {
+            try {
+                casaRepository.cambiarCasaActiva(usuarioId, casaId)
+            } catch (e: Exception) {
+                _uiState.value = _uiState.value.copy(
+                    error = e.message ?: "Error al cambiar de Casa"
+                )
+            }
+        }
+    }
+
     fun limpiarError() {
         _uiState.value = _uiState.value.copy(error = null)
     }

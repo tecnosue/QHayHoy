@@ -251,7 +251,12 @@ fun GestionCasaScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 4.dp),
-                    onClick = onCasaSeleccionada
+                    onClick =  {
+                        if (usuarioId != null) {
+                            casaViewModel.seleccionarCasa(usuarioId, casa.id)
+                        }
+                        onCasaSeleccionada()
+                    }
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text(
