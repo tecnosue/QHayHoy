@@ -1,0 +1,638 @@
+[
+  {
+    "nombre": "Tortilla de patatas",
+    "ingredientes": [
+      {"nombre": "Patatas", "cantidad": 600, "unidad": "g"},
+      {"nombre": "Huevos", "cantidad": 6, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Aceite de oliva", "cantidad": 200, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 40,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Lentejas viudas",
+    "ingredientes": [
+      {"nombre": "Lentejas pardinas", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Zanahoria", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Patata", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Laurel", "cantidad": 1, "unidad": "hoja"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 45,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Gazpacho andaluz",
+    "ingredientes": [
+      {"nombre": "Tomates maduros", "cantidad": 1, "unidad": "kg"},
+      {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 0.5, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 1, "unidad": "diente"},
+      {"nombre": "Pan", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 80, "unidad": "ml"},
+      {"nombre": "Vinagre de Jerez", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 15,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Pisto manchego",
+    "ingredientes": [
+      {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Berenjena", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 50,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Crema de calabaza",
+    "ingredientes": [
+      {"nombre": "Calabaza", "cantidad": 800, "unidad": "g"},
+      {"nombre": "Patata", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Caldo de verduras", "cantidad": 750, "unidad": "ml"},
+      {"nombre": "Nata para cocinar", "cantidad": 100, "unidad": "ml"},
+      {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 35,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Garbanzos con espinacas",
+    "ingredientes": [
+      {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
+      {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Comino", "cantidad": 0.5, "unidad": "cucharadita"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 30,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Paella de verduras",
+    "ingredientes": [
+      {"nombre": "Arroz bomba", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
+      {"nombre": "Judías verdes", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Alcachofas", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Azafrán", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Aceite de oliva", "cantidad": 60, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 45,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Espinacas a la catalana",
+    "ingredientes": [
+      {"nombre": "Espinacas frescas", "cantidad": 600, "unidad": "g"},
+      {"nombre": "Pasas", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Piñones", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 20,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Berenjenas rellenas de verduras",
+    "ingredientes": [
+      {"nombre": "Berenjenas", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Calabacín", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Queso rallado", "cantidad": 100, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 50,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Ensaladilla rusa",
+    "ingredientes": [
+      {"nombre": "Patatas", "cantidad": 500, "unidad": "g"},
+      {"nombre": "Zanahorias", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Huevos cocidos", "cantidad": 3, "unidad": "ud"},
+      {"nombre": "Guisantes cocidos", "cantidad": 150, "unidad": "g"},
+      {"nombre": "Aceitunas verdes", "cantidad": 100, "unidad": "g"},
+      {"nombre": "Mayonesa", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 30,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Croquetas de espinacas",
+    "ingredientes": [
+      {"nombre": "Espinacas cocidas", "cantidad": 300, "unidad": "g"},
+      {"nombre": "Mantequilla", "cantidad": 60, "unidad": "g"},
+      {"nombre": "Harina", "cantidad": 80, "unidad": "g"},
+      {"nombre": "Leche", "cantidad": 500, "unidad": "ml"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Huevo", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Pan rallado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Aceite para freír", "cantidad": 500, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 60,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Patatas a la riojana",
+    "ingredientes": [
+      {"nombre": "Patatas", "cantidad": 800, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento choricero", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Laurel", "cantidad": 1, "unidad": "hoja"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 40,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Sopa de tomate",
+    "ingredientes": [
+      {"nombre": "Tomates maduros", "cantidad": 1, "unidad": "kg"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Caldo de verduras", "cantidad": 500, "unidad": "ml"},
+      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Azúcar", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 30,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Hummus casero",
+    "ingredientes": [
+      {"nombre": "Garbanzos cocidos", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Tahini", "cantidad": 60, "unidad": "g"},
+      {"nombre": "Limón", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 10,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Revuelto de setas",
+    "ingredientes": [
+      {"nombre": "Setas variadas", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 20,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Coca de verduras",
+    "ingredientes": [
+      {"nombre": "Masa de hojaldre", "cantidad": 1, "unidad": "lámina"},
+      {"nombre": "Cebolla", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Aceitunas negras", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 50,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Sopa de ajo castellana",
+    "ingredientes": [
+      {"nombre": "Pan duro", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 6, "unidad": "dientes"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
+      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 25,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Calabacines rellenos de quinoa",
+    "ingredientes": [
+      {"nombre": "Calabacines", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Quinoa", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 150, "unidad": "g"},
+      {"nombre": "Queso feta", "cantidad": 100, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 45,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Ensalada de garbanzos",
+    "ingredientes": [
+      {"nombre": "Garbanzos cocidos", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Tomate cherry", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla morada", "cantidad": 0.5, "unidad": "ud"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Aceitunas negras", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
+      {"nombre": "Vinagre", "cantidad": 15, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 15,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Arroz a la cubana",
+    "ingredientes": [
+      {"nombre": "Arroz", "cantidad": 320, "unidad": "g"},
+      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Plátanos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Tomate frito", "cantidad": 300, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 30,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Menestra de verduras",
+    "ingredientes": [
+      {"nombre": "Alcachofas", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Judías verdes", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Guisantes", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Zanahoria", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Espárragos verdes", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Harina", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Aceite de oliva", "cantidad": 40, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 40,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Pimientos rellenos de arroz",
+    "ingredientes": [
+      {"nombre": "Pimientos rojos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Arroz", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Queso rallado", "cantidad": 100, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 50,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Tabulé de cuscús",
+    "ingredientes": [
+      {"nombre": "Cuscús", "cantidad": 250, "unidad": "g"},
+      {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla morada", "cantidad": 0.5, "unidad": "ud"},
+      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Hierbabuena", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Limón", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 20,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Migas con verduras",
+    "ingredientes": [
+      {"nombre": "Pan duro", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 4, "unidad": "dientes"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Aceite de oliva", "cantidad": 80, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 35,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Lasaña de verduras",
+    "ingredientes": [
+      {"nombre": "Láminas de lasaña", "cantidad": 12, "unidad": "ud"},
+      {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Berenjena", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Espinacas", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Bechamel", "cantidad": 500, "unidad": "ml"},
+      {"nombre": "Queso rallado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 70,
+    "raciones": 6,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Ensalada caprese",
+    "ingredientes": [
+      {"nombre": "Tomate", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Mozzarella fresca", "cantidad": 250, "unidad": "g"},
+      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
+      {"nombre": "Vinagre balsámico", "cantidad": 15, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 10,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Risotto de champiñones",
+    "ingredientes": [
+      {"nombre": "Arroz arborio", "cantidad": 320, "unidad": "g"},
+      {"nombre": "Champiñones", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
+      {"nombre": "Vino blanco", "cantidad": 100, "unidad": "ml"},
+      {"nombre": "Mantequilla", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Queso parmesano", "cantidad": 80, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 35,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Ratatouille",
+    "ingredientes": [
+      {"nombre": "Berenjena", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento amarillo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Hierbas provenzales", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 60,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Curry de garbanzos",
+    "ingredientes": [
+      {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Jengibre fresco", "cantidad": 20, "unidad": "g"},
+      {"nombre": "Tomate triturado", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Leche de coco", "cantidad": 400, "unidad": "ml"},
+      {"nombre": "Curry en polvo", "cantidad": 2, "unidad": "cucharadas"},
+      {"nombre": "Cilantro fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 30,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Quiche de espinacas y queso",
+    "ingredientes": [
+      {"nombre": "Masa quebrada", "cantidad": 1, "unidad": "lámina"},
+      {"nombre": "Espinacas frescas", "cantidad": 300, "unidad": "g"},
+      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Nata para cocinar", "cantidad": 200, "unidad": "ml"},
+      {"nombre": "Queso emmental rallado", "cantidad": 150, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 50,
+    "raciones": 6,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Fideuá de verduras",
+    "ingredientes": [
+      {"nombre": "Fideos finos", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
+      {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Calabacín", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Champiñones", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 35,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Tostas de tomate y aguacate",
+    "ingredientes": [
+      {"nombre": "Pan rústico", "cantidad": 4, "unidad": "rebanadas"},
+      {"nombre": "Aguacate maduro", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Limón", "cantidad": 0.5, "unidad": "ud"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 10,
+    "raciones": 2,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Sopa de verduras",
+    "ingredientes": [
+      {"nombre": "Patata", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Zanahoria", "cantidad": 2, "unidad": "ud"},
+      {"nombre": "Puerro", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Apio", "cantidad": 2, "unidad": "ramas"},
+      {"nombre": "Calabacín", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Caldo de verduras", "cantidad": 1500, "unidad": "ml"},
+      {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 35,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Pasta al pesto",
+    "ingredientes": [
+      {"nombre": "Pasta", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Albahaca fresca", "cantidad": 60, "unidad": "g"},
+      {"nombre": "Piñones", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Ajo", "cantidad": 1, "unidad": "diente"},
+      {"nombre": "Queso parmesano", "cantidad": 80, "unidad": "g"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 100, "unidad": "ml"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 20,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Pizza margarita casera",
+    "ingredientes": [
+      {"nombre": "Masa de pizza", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Mozzarella", "cantidad": 250, "unidad": "g"},
+      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Aceite de oliva virgen extra", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Orégano", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 25,
+    "raciones": 2,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Falafel casero",
+    "ingredientes": [
+      {"nombre": "Garbanzos secos", "cantidad": 250, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Cilantro fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Cilantro molido", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Harina", "cantidad": 2, "unidad": "cucharadas"},
+      {"nombre": "Aceite para freír", "cantidad": 500, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 40,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana", "vegana"]
+  },
+  {
+    "nombre": "Empanadillas de espinacas",
+    "ingredientes": [
+      {"nombre": "Obleas para empanadillas", "cantidad": 16, "unidad": "ud"},
+      {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Queso ricotta", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Huevo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 45,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Tomates rellenos de queso",
+    "ingredientes": [
+      {"nombre": "Tomates grandes", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Queso de cabra", "cantidad": 200, "unidad": "g"},
+      {"nombre": "Espinacas baby", "cantidad": 100, "unidad": "g"},
+      {"nombre": "Nueces", "cantidad": 50, "unidad": "g"},
+      {"nombre": "Miel", "cantidad": 2, "unidad": "cucharadas"},
+      {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 25,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  },
+  {
+    "nombre": "Albóndigas de lentejas",
+    "ingredientes": [
+      {"nombre": "Lentejas cocidas", "cantidad": 400, "unidad": "g"},
+      {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Pan rallado", "cantidad": 80, "unidad": "g"},
+      {"nombre": "Huevo", "cantidad": 1, "unidad": "ud"},
+      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Tomate frito", "cantidad": 300, "unidad": "g"},
+      {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
+      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+    ],
+    "tiempoPreparacionMin": 40,
+    "raciones": 4,
+    "etiquetasDieta": ["vegetariana"]
+  }
+]

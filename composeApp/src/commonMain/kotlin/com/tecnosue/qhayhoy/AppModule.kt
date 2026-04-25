@@ -1,8 +1,11 @@
 package com.tecnosue.qhayhoy
 
 import com.tecnosue.qhayhoy.data.CasaRepository
+import com.tecnosue.qhayhoy.data.CatalogoLoader
+import com.tecnosue.qhayhoy.data.RecetaExternaRepository
 import com.tecnosue.qhayhoy.data.RecetaRepository
 import com.tecnosue.qhayhoy.data.UsuarioRepository
+import com.tecnosue.qhayhoy.data.mealdb.MealDbApiClient
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
 import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
@@ -18,12 +21,18 @@ import org.koin.dsl.module
  */
 val appModule = module {
 
+    // --- Cliente HTTP de TheMealDB ---
+    single { MealDbApiClient() }
+
     // --- Repositorios (capa de datos) ---
     // single { ... } → una única instancia compartida durante toda la app.
     // Ideal para repositorios: son stateless y pesa poco mantenerlos vivos.
     single { UsuarioRepository() }
-    single { CasaRepository() }
     single { RecetaRepository() }
+    single { CatalogoLoader(get()) }
+    single { CasaRepository(get()) }
+    single { RecetaExternaRepository(get()) }
+
 
 
     // --- ViewModels ---

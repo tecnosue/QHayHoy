@@ -16,8 +16,9 @@ import kotlinx.datetime.Clock
  * y mantiene la relación N:M con los usuarios mediante los arrays
  * miembrosIds (en Casa) y casasIds (en Usuario).
  */
-class CasaRepository {
-
+class CasaRepository(
+    private val catalogoLoader: CatalogoLoader
+) {
     private val firestore = Firebase.firestore
 
     /**
@@ -50,6 +51,14 @@ class CasaRepository {
                 "casasIds" to FieldValue.arrayUnion(casaId),
                 "casaActivaId" to casaId
             )
+
+        // Cargar el catálogo inicial de recetas en la nueva Casa.
+        // Si falla, no rompemos la creación de la Casa.
+        try {
+            catalogoLoader.cargarCatalogoEnCasa(casaId, creadorId)
+        } catch (e: Exception) {
+            // El catálogo es opcional. La Casa funciona sin él.
+        }
 
         return casa
     }
