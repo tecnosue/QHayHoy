@@ -22,4 +22,18 @@ object Rutas {
 
     @Serializable
     data object Principal
+
+    @Serializable
+    data object ListaRecetas
+
+    /**
+     * Ruta que acepta un ID opcional de receta.
+     *  - Si recetaId es null → crear nueva receta
+     *  - Si tiene valor → editar esa receta
+     */
+    @Serializable
+    data class EditorReceta(val recetaId: String? = null)
+
+    @Serializable
+    data class DetalleReceta(val recetaId: String)
 }

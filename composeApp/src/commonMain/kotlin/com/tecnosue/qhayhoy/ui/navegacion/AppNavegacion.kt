@@ -7,12 +7,17 @@ import androidx.compose.runtime.remember
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 import com.tecnosue.qhayhoy.ui.auth.LoginScreen
 import com.tecnosue.qhayhoy.ui.auth.RegistroScreen
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
 import com.tecnosue.qhayhoy.ui.casa.GestionCasaScreen
 import com.tecnosue.qhayhoy.ui.casa.PrincipalScreen
+import com.tecnosue.qhayhoy.ui.receta.DetalleRecetaScreen
+import com.tecnosue.qhayhoy.ui.receta.EditorRecetaScreen
+import com.tecnosue.qhayhoy.ui.receta.ListaRecetasScreen
+import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.annotation.KoinExperimentalAPI
 
@@ -33,6 +38,8 @@ fun AppNavegacion() {
     // Esto arregla el error: No value passed for parameter 'usuarioRepository'
     val authViewModel: AuthViewModel = koinViewModel()
     val casaViewModel: CasaViewModel = koinViewModel()
+    val recetaViewModel: RecetaViewModel = koinViewModel()
+
 
     val authState by authViewModel.uiState.collectAsState()
 
@@ -100,6 +107,48 @@ fun AppNavegacion() {
                     navController.navigate(Rutas.Login) {
                         popUpTo(Rutas.Principal) { inclusive = true }
                     }
+                },
+                onIrARecetas = {
+                    navController.navigate(Rutas.ListaRecetas)
+                }
+            )
+        }
+        // --- Pantallas de recetas (RF3) ---
+
+        composable<Rutas.ListaRecetas> {
+            ListaRecetasScreen(
+                authViewModel = authViewModel,
+                recetaViewModel = recetaViewModel,
+                onVolver = { navController.popBackStack() },
+                onNuevaReceta = {
+                    navController.navigate(Rutas.EditorReceta())
+                },
+                onRecetaSeleccionada = { recetaId ->
+                    navController.navigate(Rutas.DetalleReceta(recetaId))
+                }
+            )
+        }
+
+        composable<Rutas.EditorReceta> { backStackEntry ->
+            val args = backStackEntry.toRoute<Rutas.EditorReceta>()
+            EditorRecetaScreen(
+                authViewModel = authViewModel,
+                recetaViewModel = recetaViewModel,
+                recetaId = args.recetaId,
+                onVolver = { navController.popBackStack() },
+                onGuardado = { navController.popBackStack() }
+            )
+        }
+
+        composable<Rutas.DetalleReceta> { backStackEntry ->
+            val args = backStackEntry.toRoute<Rutas.DetalleReceta>()
+            DetalleRecetaScreen(
+                authViewModel = authViewModel,
+                recetaViewModel = recetaViewModel,
+                recetaId = args.recetaId,
+                onVolver = { navController.popBackStack() },
+                onEditar = {
+                    navController.navigate(Rutas.EditorReceta(args.recetaId))
                 }
             )
         }

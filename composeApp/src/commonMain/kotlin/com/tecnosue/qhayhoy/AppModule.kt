@@ -1,9 +1,11 @@
 package com.tecnosue.qhayhoy
 
 import com.tecnosue.qhayhoy.data.CasaRepository
+import com.tecnosue.qhayhoy.data.RecetaRepository
 import com.tecnosue.qhayhoy.data.UsuarioRepository
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
+import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
@@ -21,6 +23,8 @@ val appModule = module {
     // Ideal para repositorios: son stateless y pesa poco mantenerlos vivos.
     single { UsuarioRepository() }
     single { CasaRepository() }
+    single { RecetaRepository() }
+
 
     // --- ViewModels ---
     // viewModelOf(::Clase) → crea una nueva instancia por cada pantalla
@@ -28,4 +32,6 @@ val appModule = module {
     // Koin resuelve automáticamente los parámetros del constructor.
     viewModelOf(::AuthViewModel)
     viewModelOf(::CasaViewModel)
+    viewModelOf(::RecetaViewModel)
+
 }

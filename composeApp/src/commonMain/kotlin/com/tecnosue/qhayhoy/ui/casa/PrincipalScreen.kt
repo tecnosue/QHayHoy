@@ -34,7 +34,8 @@ import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 fun PrincipalScreen(
     authViewModel: AuthViewModel,
     casaViewModel: CasaViewModel,
-    onCerrarSesion: () -> Unit
+    onCerrarSesion: () -> Unit,
+    onIrARecetas: () -> Unit
 ) {
     val authState by authViewModel.uiState.collectAsState()
     val casaState by casaViewModel.uiState.collectAsState()
@@ -120,12 +121,25 @@ fun PrincipalScreen(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Button(
+            onClick = onIrARecetas,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Mis recetas")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
 
         Button(
             onClick = {
                 authViewModel.cerrarSesion()
             },
+            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.errorContainer,
+                contentColor = MaterialTheme.colorScheme.onErrorContainer
+            ),
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Cerrar sesión")
