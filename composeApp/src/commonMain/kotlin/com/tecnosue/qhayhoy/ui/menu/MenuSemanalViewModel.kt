@@ -108,4 +108,24 @@ class MenuSemanalViewModel(
     fun limpiarEstadoExito() {
         _uiState.value = _uiState.value.copy(exitoGeneracion = false)
     }
+
+    fun sustituirPlato(
+        casaId: String,
+        semanaId: String,
+        dia: String,
+        tipo: String,
+        nuevaRecetaId: String
+    ) {
+        viewModelScope.launch {
+            try {
+                menuRepository.sustituirPlato(casaId, semanaId, dia, tipo, nuevaRecetaId)
+                // El listener reactivo de observarMenuDeLaSemana refresca la UI sola.
+            } catch (e: Exception) {
+                e.printStackTrace()
+                _uiState.value = _uiState.value.copy(
+                    error = e.message ?: "Error al sustituir el plato"
+                )
+            }
+        }
+    }
 }

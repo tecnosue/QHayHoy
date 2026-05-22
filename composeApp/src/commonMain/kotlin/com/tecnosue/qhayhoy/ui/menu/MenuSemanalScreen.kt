@@ -1,6 +1,5 @@
 package com.tecnosue.qhayhoy.ui.menu
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,19 +16,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.composables.icons.lucide.ArrowLeft
 import com.composables.icons.lucide.Lucide
+import com.composables.icons.lucide.RefreshCw
 import com.tecnosue.qhayhoy.domain.ComidaDia
 import com.tecnosue.qhayhoy.domain.DiaSemana
-import com.tecnosue.qhayhoy.domain.MenuSemanal
 import com.tecnosue.qhayhoy.domain.Receta
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 
 /**
  * COMPONENTE STATEFUL
  * Se encarga de conectarse con el ViewModel, recolectar el estado
  * y pasar los datos limpios al componente visual.
  */
-
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MenuSemanalScreen(
     viewModel: MenuSemanalViewModel,
@@ -37,12 +34,13 @@ fun MenuSemanalScreen(
     semanaId: String,
     miembrosIds: List<String>,
     onVolver: () -> Unit,
-    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit // Navegación al detalle
+    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit
 ) {
-    // Recolectamos el estado de forma reactiva
     val uiState by viewModel.uiState.collectAsState()
 
-    // Observamos el menú al entrar en la pantalla
+    // Estado del bottom sheet: par (dia, tipo) cuando está abierto, null cuando cerrado
+    var platoASustituir by remember { mutableStateOf<Pair<String, String>?>(null) }
+
     LaunchedEffect(semanaId) {
         viewModel.observarDatos(casaId, semanaId)
     }
@@ -54,14 +52,29 @@ fun MenuSemanalScreen(
             viewModel.generarMenuAutomatico(casaId, semanaId, miembrosIds)
         },
         onVolver = onVolver,
-        onPlatoClick = onPlatoClick
+        onPlatoClick = onPlatoClick,
+        onSustituirClick = { dia, tipo ->
+            platoASustituir = dia to tipo
+        }
     )
+
+    platoASustituir?.let { (dia, tipo) ->
+        SustituirPlatoBottomSheet(
+            dia = dia,
+            tipo = tipo,
+            recetas = uiState.recetas,
+            onCerrar = { platoASustituir = null },
+            onRecetaSeleccionada = { recetaId ->
+                viewModel.sustituirPlato(casaId, semanaId, dia, tipo, recetaId)
+                platoASustituir = null
+            }
+        )
+    }
 }
 
 /**
  * COMPONENTE STATELESS
  * Puramente visual. No sabe qué es un ViewModel ni Firebase.
- * Ideal para renderizar Previews fácilmente.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -70,10 +83,9 @@ fun MenuSemanalContent(
     recetas: List<Receta>,
     onGenerarMenuClick: () -> Unit,
     onVolver: () -> Unit,
-    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit
+    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
+    onSustituirClick: (dia: String, tipo: String) -> Unit
 ) {
-
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -105,7 +117,7 @@ fun MenuSemanalContent(
             Text(
                 text = "Semana actual",
                 fontSize = 14.sp,
-                color = Color.Gray,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.align(Alignment.Start)
             )
 
@@ -150,7 +162,10 @@ fun MenuSemanalContent(
                 }
             } else if (uiState.menu == null && !uiState.cargando) {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text("Aún no hay menú para esta semana.\n¡Pulsa generar!", color = Color.Gray)
+                    Text(
+                        text = "Aún no hay menú para esta semana.\n¡Pulsa generar!",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 }
             } else if (uiState.menu != null) {
                 LazyColumn(
@@ -165,7 +180,8 @@ fun MenuSemanalContent(
                             comidaDia = comidaDia,
                             asistencias = uiState.menu.asistencias,
                             recetas = recetas,
-                            onPlatoClick = onPlatoClick
+                            onPlatoClick = onPlatoClick,
+                            onSustituirClick = onSustituirClick
                         )
                     }
                 }
@@ -180,7 +196,8 @@ fun DiaMenuCard(
     comidaDia: ComidaDia,
     asistencias: Map<String, List<String>>,
     recetas: List<Receta>,
-    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit
+    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
+    onSustituirClick: (dia: String, tipo: String) -> Unit
 ) {
     val resolverNombre = { id: String ->
         recetas.find { it.id == id }?.nombre ?: "Plato sin asignar"
@@ -191,7 +208,6 @@ fun DiaMenuCard(
 
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -209,18 +225,20 @@ fun DiaMenuCard(
                 tipo = "COMIDA",
                 nombrePlato = resolverNombre(comidaDia.comidaRecetaId),
                 asistentes = asistenciaComida,
-                onClick = { onPlatoClick(dia.name, "COMIDA", comidaDia.comidaRecetaId) }
+                onClick = { onPlatoClick(dia.name, "COMIDA", comidaDia.comidaRecetaId) },
+                onSustituirClick = { onSustituirClick(dia.name, "COMIDA") }
             )
 
             Spacer(modifier = Modifier.height(12.dp))
-            HorizontalDivider(color = Color(0xFFEEEEEE), thickness = 1.dp)
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant, thickness = 1.dp)
             Spacer(modifier = Modifier.height(12.dp))
 
             PlatoRow(
                 tipo = "CENA",
                 nombrePlato = resolverNombre(comidaDia.cenaRecetaId),
                 asistentes = asistenciaCena,
-                onClick = { onPlatoClick(dia.name, "CENA", comidaDia.cenaRecetaId) }
+                onClick = { onPlatoClick(dia.name, "CENA", comidaDia.cenaRecetaId) },
+                onSustituirClick = { onSustituirClick(dia.name, "CENA") }
             )
         }
     }
@@ -231,7 +249,8 @@ fun PlatoRow(
     tipo: String,
     nombrePlato: String,
     asistentes: Int,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    onSustituirClick: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -247,12 +266,20 @@ fun PlatoRow(
                 text = tipo,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Gray
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             Text(
                 text = nombrePlato,
                 fontSize = 15.sp,
-                color = Color.DarkGray
+                color = MaterialTheme.colorScheme.onSurface
+            )
+        }
+
+        IconButton(onClick = onSustituirClick) {
+            Icon(
+                imageVector = Lucide.RefreshCw,
+                contentDescription = "Sustituir plato",
+                tint = MaterialTheme.colorScheme.primary
             )
         }
 
@@ -262,9 +289,93 @@ fun PlatoRow(
             Text(
                 text = "$asistentes",
                 fontSize = 14.sp,
-                color = Color.Gray,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
                 fontWeight = FontWeight.Medium
             )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun SustituirPlatoBottomSheet(
+    dia: String,
+    tipo: String,
+    recetas: List<Receta>,
+    onCerrar: () -> Unit,
+    onRecetaSeleccionada: (recetaId: String) -> Unit
+) {
+    val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+
+    ModalBottomSheet(
+        onDismissRequest = onCerrar,
+        sheetState = sheetState,
+        containerColor = MaterialTheme.colorScheme.surface
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .padding(bottom = 24.dp)
+        ) {
+            Text(
+                text = "Sustituir plato",
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = "${dia.lowercase().replaceFirstChar { it.uppercase() }} · ${tipo.lowercase().replaceFirstChar { it.uppercase() }}",
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            if (recetas.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "No hay recetas disponibles",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            } else {
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    items(recetas, key = { it.id }) { receta ->
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { onRecetaSeleccionada(receta.id) },
+                            elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
+                        ) {
+                            Column(modifier = Modifier.padding(12.dp)) {
+                                Text(
+                                    text = receta.nombre.ifBlank { "(Sin nombre)" },
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface
+                                )
+                                if (receta.tiempoPreparacionMin != null) {
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = "${receta.tiempoPreparacionMin} min · ${receta.raciones} raciones",
+                                        fontSize = 12.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

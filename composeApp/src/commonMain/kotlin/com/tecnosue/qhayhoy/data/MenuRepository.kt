@@ -5,6 +5,7 @@ import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.firestore.firestore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import com.tecnosue.qhayhoy.domain.ComidaDia
 
 /**
  * Repositorio encargado de gestionar las operaciones sobre el menú semanal
@@ -61,6 +62,39 @@ class MenuRepository {
     ) {
         // En Firestore NoSQL, sobrescribimos el documento con el nuevo estado de asistencias.
         // Al estar observando con .snapshots, la UI reaccionará sola.
+        menuRef(casaId).document(semanaId).set(menuActualizado)
+    }
+
+    /**
+     * Sustituye un plato concreto (comida o cena de un día) por una receta distinta.
+     * Lee el menú actual, modifica solo el día/tipo afectado y guarda.
+     *
+     * @param tipo "COMIDA" o "CENA"
+     */
+    suspend fun sustituirPlato(
+        casaId: String,
+        semanaId: String,
+        dia: String,
+        tipo: String,
+        nuevaRecetaId: String
+    ) {
+        val snapshot = menuRef(casaId).document(semanaId).get()
+        if (!snapshot.exists) {
+            throw Exception("No existe menú para esta semana")
+        }
+        val menuActual = snapshot.data(MenuSemanal.serializer())
+
+        val comidaDiaActual = menuActual.dias[dia] ?: com.tecnosue.qhayhoy.domain.ComidaDia()
+        val comidaDiaNuevo = when (tipo) {
+            "COMIDA" -> comidaDiaActual.copy(comidaRecetaId = nuevaRecetaId)
+            "CENA"   -> comidaDiaActual.copy(cenaRecetaId = nuevaRecetaId)
+            else     -> throw Exception("Tipo de comida no válido: $tipo")
+        }
+
+        val diasActualizados = menuActual.dias.toMutableMap()
+        diasActualizados[dia] = comidaDiaNuevo
+
+        val menuActualizado = menuActual.copy(dias = diasActualizados)
         menuRef(casaId).document(semanaId).set(menuActualizado)
     }
 }
