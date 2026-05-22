@@ -44,4 +44,13 @@ object Rutas {
 
     @Serializable
     data class PreviewRecetaExterna(val idExterno: String)
+
+    // --- Menú Semanal (RF4) ---
+
+    @Serializable
+    data class MenuSemanal(
+        val semanaId: String,
+        val casaId: String,
+        val miembrosIds: List<String>  // si Serializable lo permite; si no, pásalo como string separado por comas
+    )
 }

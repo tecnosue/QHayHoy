@@ -254,8 +254,8 @@ fun GestionCasaScreen(
                     onClick =  {
                         if (usuarioId != null) {
                             casaViewModel.seleccionarCasa(usuarioId, casa.id)
+
                         }
-                        onCasaSeleccionada()
                     }
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {

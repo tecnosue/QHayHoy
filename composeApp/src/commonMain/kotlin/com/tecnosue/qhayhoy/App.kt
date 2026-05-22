@@ -3,6 +3,8 @@ package com.tecnosue.qhayhoy
 import androidx.compose.runtime.Composable
 import com.tecnosue.qhayhoy.ui.navegacion.AppNavegacion
 import org.koin.compose.KoinApplication
+import com.tecnosue.qhayhoy.ui.theme.QHayHoyTheme
+
 
 /**
  * Entry point de la aplicación (compartido entre Android e iOS).
@@ -17,6 +19,8 @@ fun App() {
             modules(appModule)
         }
     ) {
-        AppNavegacion()
+        QHayHoyTheme {
+            AppNavegacion()
+        }
     }
 }

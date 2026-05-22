@@ -23,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
+import com.tecnosue.qhayhoy.ui.navegacion.Rutas
+import kotlinx.datetime.*
 
 /**
  * Pantalla principal tras seleccionar/crear/unirse a una Casa.
@@ -37,11 +39,12 @@ fun PrincipalScreen(
     casaViewModel: CasaViewModel,
     onCerrarSesion: () -> Unit,
     onIrARecetas: () -> Unit,
-    onCambiarDeCasa: () -> Unit
-
+    onCambiarDeCasa: () -> Unit,
+    onIrAMenu: (semanaId: String, casaId: String, miembrosIds: List<String>) -> Unit
 ) {
     val authState by authViewModel.uiState.collectAsState()
     val casaState by casaViewModel.uiState.collectAsState()
+
 
     // Si se pierde la sesión por cualquier motivo, salimos al Login
     LaunchedEffect(authState.usuarioActual) {
@@ -118,11 +121,19 @@ fun PrincipalScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        Text(
-            text = "En próximas iteraciones:\n• Gestión de recetas\n• Menú semanal\n• Lista de la compra",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
+        Button(
+            onClick = {
+                val casa = casaState.casaSeleccionada
+                if (casa == null) {
+                    return@Button
+                }
+                val semanaId = obtenerIdSemanaActual()
+                onIrAMenu(semanaId, casa.id, casa.miembrosIds)
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Ver menú de la semana")
+        }
 
         Spacer(modifier = Modifier.height(32.dp))
 
@@ -156,4 +167,17 @@ fun PrincipalScreen(
             Text("Cerrar sesión")
         }
     }
+}
+/**
+ * Helper para obtener el ID de la semana (ej. "2026-04-27").
+ * Siempre devuelve la fecha correspondiente al Lunes de la semana actual.
+ */
+fun obtenerIdSemanaActual(): String {
+    val hoy = Clock.System.todayIn(TimeZone.currentSystemDefault())
+
+    // Usamos isoDayNumber (1 para Lunes, 7 para Domingo) que es 100% Kotlin
+    val diasARestar = hoy.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber
+    val lunes = hoy.minus(DatePeriod(days = diasARestar))
+
+    return lunes.toString()
 }

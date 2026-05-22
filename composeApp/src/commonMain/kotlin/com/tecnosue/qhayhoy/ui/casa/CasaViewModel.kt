@@ -143,10 +143,22 @@ class CasaViewModel(
      * Se llama al pulsar una Casa de la lista "Mis Casas".
      */
     fun seleccionarCasa(usuarioId: String, casaId: String) {
-
         viewModelScope.launch {
             try {
                 casaRepository.cambiarCasaActiva(usuarioId, casaId)
+
+                // Buscamos la Casa completa en la lista y la marcamos como activa en el estado
+                val casaSeleccionada = _uiState.value.casas.find { it.id == casaId }
+                if (casaSeleccionada == null) {
+                    _uiState.value = _uiState.value.copy(
+                        error = "No se encontró la Casa seleccionada"
+                    )
+                    return@launch
+                }
+                _uiState.value = _uiState.value.copy(
+                    casaSeleccionada = casaSeleccionada,
+                    operacionExitosa = true
+                )
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(
                     error = e.message ?: "Error al cambiar de Casa"

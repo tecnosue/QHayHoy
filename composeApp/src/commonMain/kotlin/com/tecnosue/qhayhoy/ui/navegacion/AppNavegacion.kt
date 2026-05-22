@@ -14,6 +14,8 @@ import com.tecnosue.qhayhoy.ui.auth.RegistroScreen
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
 import com.tecnosue.qhayhoy.ui.casa.GestionCasaScreen
 import com.tecnosue.qhayhoy.ui.casa.PrincipalScreen
+import com.tecnosue.qhayhoy.ui.menu.MenuSemanalScreen
+import com.tecnosue.qhayhoy.ui.menu.MenuSemanalViewModel
 import com.tecnosue.qhayhoy.ui.receta.DescubrirRecetasScreen
 import com.tecnosue.qhayhoy.ui.receta.DetalleRecetaScreen
 import com.tecnosue.qhayhoy.ui.receta.EditorRecetaScreen
@@ -41,7 +43,7 @@ fun AppNavegacion() {
     val authViewModel: AuthViewModel = koinViewModel()
     val casaViewModel: CasaViewModel = koinViewModel()
     val recetaViewModel: RecetaViewModel = koinViewModel()
-
+    val menuViewModel: MenuSemanalViewModel = koinViewModel()
 
     val authState by authViewModel.uiState.collectAsState()
 
@@ -51,6 +53,7 @@ fun AppNavegacion() {
     } else {
         Rutas.Login
     }
+
 
     NavHost(
         navController = navController,
@@ -113,12 +116,14 @@ fun AppNavegacion() {
                 onIrARecetas = {
                     navController.navigate(Rutas.ListaRecetas)
                 },
-
                 onCambiarDeCasa = {
                     navController.navigate(Rutas.GestionCasa) {
                         popUpTo(Rutas.Principal) { inclusive = true }
                     }
-                }
+                },
+                onIrAMenu = { semanaId, casaId, miembrosIds ->
+                    println("QHAYHOY >>> Ejecutando navigate a MenuSemanal")
+                    navController.navigate(Rutas.MenuSemanal(semanaId, casaId, miembrosIds))                }
             )
         }
         // --- Pantallas de recetas (RF3) ---
@@ -137,6 +142,8 @@ fun AppNavegacion() {
                 onIrADescubrir = {
                     navController.navigate(Rutas.DescubrirRecetas)
                 }
+
+
             )
         }
 
@@ -188,6 +195,22 @@ fun AppNavegacion() {
                         route = Rutas.ListaRecetas,
                         inclusive = false
                     )
+                }
+            )
+        }
+
+        composable<Rutas.MenuSemanal> { backStackEntry ->
+            val args = backStackEntry.toRoute<Rutas.MenuSemanal>()
+            MenuSemanalScreen(
+                viewModel = menuViewModel,
+                casaId = args.casaId,
+                semanaId = args.semanaId,
+                miembrosIds = args.miembrosIds,
+                onVolver = { navController.popBackStack() },
+                onPlatoClick = { _, _, recetaId ->
+                    if (recetaId.isNotBlank()) {
+                        navController.navigate(Rutas.DetalleReceta(recetaId))
+                    }
                 }
             )
         }
