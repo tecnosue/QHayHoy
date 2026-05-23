@@ -201,11 +201,14 @@ fun AppNavegacion() {
 
         composable<Rutas.MenuSemanal> { backStackEntry ->
             val args = backStackEntry.toRoute<Rutas.MenuSemanal>()
+            val authState by authViewModel.uiState.collectAsState()
+            val usuarioActualId = authState.usuarioActual?.id ?: return@composable
             MenuSemanalScreen(
                 viewModel = menuViewModel,
                 casaId = args.casaId,
                 semanaId = args.semanaId,
                 miembrosIds = args.miembrosIds,
+                usuarioActualId = usuarioActualId,
                 onVolver = { navController.popBackStack() },
                 onPlatoClick = { _, _, recetaId ->
                     if (recetaId.isNotBlank()) {

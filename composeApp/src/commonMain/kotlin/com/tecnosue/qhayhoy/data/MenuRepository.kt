@@ -51,19 +51,7 @@ class MenuRepository {
         menuRef(casaId).document(menu.id).set(menu)
     }
 
-    /**
-     * Actualiza el mapa de asistencias para una comida concreta.
-     * Esto disparará automáticamente los listeners reactivos de Firestore.
-     */
-    suspend fun actualizarAsistencia(
-        casaId: String,
-        semanaId: String,
-        menuActualizado: MenuSemanal
-    ) {
-        // En Firestore NoSQL, sobrescribimos el documento con el nuevo estado de asistencias.
-        // Al estar observando con .snapshots, la UI reaccionará sola.
-        menuRef(casaId).document(semanaId).set(menuActualizado)
-    }
+
 
     /**
      * Sustituye un plato concreto (comida o cena de un día) por una receta distinta.
@@ -95,6 +83,43 @@ class MenuRepository {
         diasActualizados[dia] = comidaDiaNuevo
 
         val menuActualizado = menuActual.copy(dias = diasActualizados)
+        menuRef(casaId).document(semanaId).set(menuActualizado)
+    }
+
+    /**
+     * Actualiza la asistencia de un miembro concreto a una comida concreta.
+     * Si asistira=true, se asegura de que el userId esté en la lista.
+     * Si asistira=false, se asegura de que NO esté.
+     *
+     * @param tipo "COMIDA" o "CENA"
+     */
+    suspend fun actualizarAsistencia(
+        casaId: String,
+        semanaId: String,
+        dia: String,
+        tipo: String,
+        usuarioId: String,
+        asistira: Boolean
+    ) {
+        val snapshot = menuRef(casaId).document(semanaId).get()
+        if (!snapshot.exists) {
+            throw Exception("No existe menú para esta semana")
+        }
+        val menuActual = snapshot.data(MenuSemanal.serializer())
+
+        val clave = "${dia}_${tipo}"
+        val listaActual = menuActual.asistencias[clave] ?: emptyList()
+
+        val listaNueva = if (asistira) {
+            if (usuarioId in listaActual) listaActual else listaActual + usuarioId
+        } else {
+            listaActual - usuarioId
+        }
+
+        val asistenciasActualizadas = menuActual.asistencias.toMutableMap()
+        asistenciasActualizadas[clave] = listaNueva
+
+        val menuActualizado = menuActual.copy(asistencias = asistenciasActualizadas)
         menuRef(casaId).document(semanaId).set(menuActualizado)
     }
 }

@@ -20,6 +20,8 @@ import com.composables.icons.lucide.RefreshCw
 import com.tecnosue.qhayhoy.domain.ComidaDia
 import com.tecnosue.qhayhoy.domain.DiaSemana
 import com.tecnosue.qhayhoy.domain.Receta
+import androidx.compose.material3.Checkbox
+
 
 /**
  * COMPONENTE STATEFUL
@@ -33,12 +35,12 @@ fun MenuSemanalScreen(
     casaId: String,
     semanaId: String,
     miembrosIds: List<String>,
+    usuarioActualId: String,
     onVolver: () -> Unit,
     onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    // Estado del bottom sheet: par (dia, tipo) cuando está abierto, null cuando cerrado
     var platoASustituir by remember { mutableStateOf<Pair<String, String>?>(null) }
 
     LaunchedEffect(semanaId) {
@@ -48,13 +50,16 @@ fun MenuSemanalScreen(
     MenuSemanalContent(
         uiState = uiState,
         recetas = uiState.recetas,
+        usuarioActualId = usuarioActualId,
+        totalMiembros = miembrosIds.size,
         onGenerarMenuClick = {
             viewModel.generarMenuAutomatico(casaId, semanaId, miembrosIds)
         },
         onVolver = onVolver,
         onPlatoClick = onPlatoClick,
-        onSustituirClick = { dia, tipo ->
-            platoASustituir = dia to tipo
+        onSustituirClick = { dia, tipo -> platoASustituir = dia to tipo },
+        onCambiarMiAsistencia = { dia, tipo, asistira ->
+            viewModel.cambiarAsistencia(casaId, semanaId, dia, tipo, usuarioActualId, asistira)
         }
     )
 
@@ -81,10 +86,13 @@ fun MenuSemanalScreen(
 fun MenuSemanalContent(
     uiState: MenuSemanalUiState,
     recetas: List<Receta>,
+    usuarioActualId: String,
+    totalMiembros: Int,
     onGenerarMenuClick: () -> Unit,
     onVolver: () -> Unit,
     onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
-    onSustituirClick: (dia: String, tipo: String) -> Unit
+    onSustituirClick: (dia: String, tipo: String) -> Unit,
+    onCambiarMiAsistencia: (dia: String, tipo: String, asistira: Boolean) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -180,8 +188,11 @@ fun MenuSemanalContent(
                             comidaDia = comidaDia,
                             asistencias = uiState.menu.asistencias,
                             recetas = recetas,
+                            usuarioActualId = usuarioActualId,
+                            totalMiembros = totalMiembros,
                             onPlatoClick = onPlatoClick,
-                            onSustituirClick = onSustituirClick
+                            onSustituirClick = onSustituirClick,
+                            onCambiarMiAsistencia = onCambiarMiAsistencia
                         )
                     }
                 }
@@ -196,15 +207,18 @@ fun DiaMenuCard(
     comidaDia: ComidaDia,
     asistencias: Map<String, List<String>>,
     recetas: List<Receta>,
+    usuarioActualId: String,
+    totalMiembros: Int,
     onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
-    onSustituirClick: (dia: String, tipo: String) -> Unit
+    onSustituirClick: (dia: String, tipo: String) -> Unit,
+    onCambiarMiAsistencia: (dia: String, tipo: String, asistira: Boolean) -> Unit
 ) {
     val resolverNombre = { id: String ->
         recetas.find { it.id == id }?.nombre ?: "Plato sin asignar"
     }
 
-    val asistenciaComida = asistencias["${dia.name}_COMIDA"]?.size ?: 0
-    val asistenciaCena = asistencias["${dia.name}_CENA"]?.size ?: 0
+    val asistentesComida = asistencias["${dia.name}_COMIDA"] ?: emptyList()
+    val asistentesCena = asistencias["${dia.name}_CENA"] ?: emptyList()
 
     Card(
         shape = RoundedCornerShape(16.dp),
@@ -224,9 +238,12 @@ fun DiaMenuCard(
             PlatoRow(
                 tipo = "COMIDA",
                 nombrePlato = resolverNombre(comidaDia.comidaRecetaId),
-                asistentes = asistenciaComida,
+                asistentes = asistentesComida.size,
+                totalMiembros = totalMiembros,
+                yoAsisto = usuarioActualId in asistentesComida,
                 onClick = { onPlatoClick(dia.name, "COMIDA", comidaDia.comidaRecetaId) },
-                onSustituirClick = { onSustituirClick(dia.name, "COMIDA") }
+                onSustituirClick = { onSustituirClick(dia.name, "COMIDA") },
+                onToggleMiAsistencia = { asistira -> onCambiarMiAsistencia(dia.name, "COMIDA", asistira) }
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -236,9 +253,12 @@ fun DiaMenuCard(
             PlatoRow(
                 tipo = "CENA",
                 nombrePlato = resolverNombre(comidaDia.cenaRecetaId),
-                asistentes = asistenciaCena,
+                asistentes = asistentesCena.size,
+                totalMiembros = totalMiembros,
+                yoAsisto = usuarioActualId in asistentesCena,
                 onClick = { onPlatoClick(dia.name, "CENA", comidaDia.cenaRecetaId) },
-                onSustituirClick = { onSustituirClick(dia.name, "CENA") }
+                onSustituirClick = { onSustituirClick(dia.name, "CENA") },
+                onToggleMiAsistencia = { asistira -> onCambiarMiAsistencia(dia.name, "CENA", asistira) }
             )
         }
     }
@@ -249,8 +269,11 @@ fun PlatoRow(
     tipo: String,
     nombrePlato: String,
     asistentes: Int,
+    totalMiembros: Int,
+    yoAsisto: Boolean,
     onClick: () -> Unit,
-    onSustituirClick: () -> Unit
+    onSustituirClick: () -> Unit,
+    onToggleMiAsistencia: (asistira: Boolean) -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -275,6 +298,21 @@ fun PlatoRow(
             )
         }
 
+        // Indicador informativo: 3/4 comensales
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(text = "👥", fontSize = 14.sp)
+            Spacer(modifier = Modifier.width(4.dp))
+            Text(
+                text = "$asistentes/$totalMiembros",
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontWeight = FontWeight.Medium
+            )
+        }
+
+        Spacer(modifier = Modifier.width(8.dp))
+
+        // Botón sustituir
         IconButton(onClick = onSustituirClick) {
             Icon(
                 imageVector = Lucide.RefreshCw,
@@ -283,16 +321,11 @@ fun PlatoRow(
             )
         }
 
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(text = "👥", fontSize = 14.sp)
-            Spacer(modifier = Modifier.width(4.dp))
-            Text(
-                text = "$asistentes",
-                fontSize = 14.sp,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                fontWeight = FontWeight.Medium
-            )
-        }
+        // Check de mi asistencia
+        Checkbox(
+            checked = yoAsisto,
+            onCheckedChange = { nuevoValor -> onToggleMiAsistencia(nuevoValor) }
+        )
     }
 }
 
@@ -379,3 +412,4 @@ fun SustituirPlatoBottomSheet(
         }
     }
 }
+

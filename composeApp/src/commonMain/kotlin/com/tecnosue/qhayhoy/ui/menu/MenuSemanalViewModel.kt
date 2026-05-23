@@ -128,4 +128,32 @@ class MenuSemanalViewModel(
             }
         }
     }
+
+    fun cambiarAsistencia(
+        casaId: String,
+        semanaId: String,
+        dia: String,
+        tipo: String,
+        usuarioId: String,
+        asistira: Boolean
+    ) {
+        viewModelScope.launch {
+            try {
+                menuRepository.actualizarAsistencia(
+                    casaId = casaId,
+                    semanaId = semanaId,
+                    dia = dia,
+                    tipo = tipo,
+                    usuarioId = usuarioId,
+                    asistira = asistira
+                )
+                // El listener reactivo de Firestore refresca la UI sola.
+            } catch (e: Exception) {
+                e.printStackTrace()
+                _uiState.value = _uiState.value.copy(
+                    error = e.message ?: "Error al actualizar la asistencia"
+                )
+            }
+        }
+    }
 }
