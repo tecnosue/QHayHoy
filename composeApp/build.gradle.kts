@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.googleServices)
     alias(libs.plugins.kotlinxSerialization)
+    id("org.jetbrains.dokka") version "1.9.20"
 }
 
 kotlin {
