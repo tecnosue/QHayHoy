@@ -22,7 +22,8 @@ private data class RecetaCatalogoDto(
     val ingredientes: List<IngredienteCatalogoDto>,
     val tiempoPreparacionMin: Int? = null,
     val raciones: Int = 4,
-    val etiquetasDieta: List<String> = emptyList()
+    val etiquetasDieta: List<String> = emptyList(),
+    val imagenUrl: String? = null
 )
 
 @Serializable
@@ -71,7 +72,7 @@ class CatalogoLoader(
                     )
                 },
                 pasos = emptyList(),
-                imagenUrl = null,
+                imagenUrl = dto.imagenUrl,
                 tiempoPreparacionMin = dto.tiempoPreparacionMin,
                 raciones = dto.raciones,
                 etiquetasDieta = dto.etiquetasDieta,

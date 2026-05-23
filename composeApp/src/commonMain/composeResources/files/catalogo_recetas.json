@@ -1,6 +1,8 @@
 [
   {
     "nombre": "Tortilla de patatas",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tortilla_Espa%C3%B1ola.jpg",
+
     "ingredientes": [
       {"nombre": "Patatas", "cantidad": 600, "unidad": "g"},
       {"nombre": "Huevos", "cantidad": 6, "unidad": "ud"},
@@ -14,6 +16,7 @@
   },
   {
     "nombre": "Lentejas viudas",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Vegan_lentils_-_Lentejas_viudas_%286678823259%29.jpg",
     "ingredientes": [
       {"nombre": "Lentejas pardinas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -33,6 +36,7 @@
   },
   {
     "nombre": "Gazpacho andaluz",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Gazpacho_-_La_Ola_-_01.JPG",
     "ingredientes": [
       {"nombre": "Tomates maduros", "cantidad": 1, "unidad": "kg"},
       {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
@@ -50,6 +54,7 @@
   },
   {
     "nombre": "Pisto manchego",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Pisto_manchego.jpg/960px-Pisto_manchego.jpg?_=20220817183438",
     "ingredientes": [
       {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Berenjena", "cantidad": 1, "unidad": "ud"},
@@ -66,6 +71,7 @@
   },
   {
     "nombre": "Crema de calabaza",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Crema_de_calabaza_asada.jpg/960px-Crema_de_calabaza_asada.jpg?_=20121122055855",
     "ingredientes": [
       {"nombre": "Calabaza", "cantidad": 800, "unidad": "g"},
       {"nombre": "Patata", "cantidad": 1, "unidad": "ud"},
@@ -82,6 +88,7 @@
   },
   {
     "nombre": "Garbanzos con espinacas",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/GarbanzosConEspinacas.jpg/960px-GarbanzosConEspinacas.jpg",
     "ingredientes": [
       {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
       {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
@@ -99,6 +106,7 @@
   },
   {
     "nombre": "Paella de verduras",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paella_de_verduras_o_arroz_viudo.jpg/960px-Paella_de_verduras_o_arroz_viudo.jpg",
     "ingredientes": [
       {"nombre": "Arroz bomba", "cantidad": 400, "unidad": "g"},
       {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
@@ -118,6 +126,7 @@
   },
   {
     "nombre": "Espinacas a la catalana",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Espinacs_amb_panses_i_pinyons.jpg",
     "ingredientes": [
       {"nombre": "Espinacas frescas", "cantidad": 600, "unidad": "g"},
       {"nombre": "Pasas", "cantidad": 50, "unidad": "g"},
@@ -132,6 +141,7 @@
   },
   {
     "nombre": "Berenjenas rellenas de verduras",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Berenjenas_rellenas_a_la_caprese_02.jpg/960px-Berenjenas_rellenas_a_la_caprese_02.jpg",
     "ingredientes": [
       {"nombre": "Berenjenas", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -148,6 +158,7 @@
   },
   {
     "nombre": "Ensaladilla rusa",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/2023_Sa%C5%82atka_jarzynowa_%281%29.jpg/960px-2023_Sa%C5%82atka_jarzynowa_%281%29.jpg",
     "ingredientes": [
       {"nombre": "Patatas", "cantidad": 500, "unidad": "g"},
       {"nombre": "Zanahorias", "cantidad": 2, "unidad": "ud"},
@@ -163,6 +174,7 @@
   },
   {
     "nombre": "Croquetas de espinacas",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Croquetas_caseras_de_jam%C3%B3n_en_Salamanca.jpg/960px-Croquetas_caseras_de_jam%C3%B3n_en_Salamanca.jpg",
     "ingredientes": [
       {"nombre": "Espinacas cocidas", "cantidad": 300, "unidad": "g"},
       {"nombre": "Mantequilla", "cantidad": 60, "unidad": "g"},
@@ -181,6 +193,7 @@
   },
   {
     "nombre": "Patatas a la riojana",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Patatas_Riojana_-_2015.JPG/960px-Patatas_Riojana_-_2015.JPG",
     "ingredientes": [
       {"nombre": "Patatas", "cantidad": 800, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -197,6 +210,7 @@
   },
   {
     "nombre": "Sopa de tomate",
+    "imagenUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Tomato_Mix_Soup.jpg/960px-Tomato_Mix_Soup.jpg",
     "ingredientes": [
       {"nombre": "Tomates maduros", "cantidad": 1, "unidad": "kg"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -213,6 +227,7 @@
   },
   {
     "nombre": "Hummus casero",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/7/7e/02021_0752_%282%29_Hummus%2C_Vegan_food_in_Poland.jpg",
     "ingredientes": [
       {"nombre": "Garbanzos cocidos", "cantidad": 400, "unidad": "g"},
       {"nombre": "Tahini", "cantidad": 60, "unidad": "g"},
@@ -229,6 +244,7 @@
   },
   {
     "nombre": "Revuelto de setas",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/a/a5/Revuelto_de_huevos%2C_ajetes_y_setas.jpg",
     "ingredientes": [
       {"nombre": "Setas variadas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
@@ -243,6 +259,7 @@
   },
   {
     "nombre": "Coca de verduras",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/5/5c/Coca_de_verdura.jpg",
     "ingredientes": [
       {"nombre": "Masa de hojaldre", "cantidad": 1, "unidad": "lámina"},
       {"nombre": "Cebolla", "cantidad": 2, "unidad": "ud"},
@@ -259,6 +276,7 @@
   },
   {
     "nombre": "Sopa de ajo castellana",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/0/00/Sopa_Castellana.jpg",
     "ingredientes": [
       {"nombre": "Pan duro", "cantidad": 200, "unidad": "g"},
       {"nombre": "Ajo", "cantidad": 6, "unidad": "dientes"},
@@ -274,6 +292,7 @@
   },
   {
     "nombre": "Calabacines rellenos de quinoa",
+    "imagenUrl":"https://www.conasi.eu/blog/wp-content/uploads/2012/04/calabacines-rellenos-1.jpg",
     "ingredientes": [
       {"nombre": "Calabacines", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Quinoa", "cantidad": 200, "unidad": "g"},
@@ -290,6 +309,7 @@
   },
   {
     "nombre": "Ensalada de garbanzos",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/9/94/Ensalada_de_Garbanzos.jpg",
     "ingredientes": [
       {"nombre": "Garbanzos cocidos", "cantidad": 400, "unidad": "g"},
       {"nombre": "Tomate cherry", "cantidad": 200, "unidad": "g"},
@@ -307,6 +327,7 @@
   },
   {
     "nombre": "Arroz a la cubana",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/6/68/Arroz_a_la_cubana_en_LLanes.jpg",
     "ingredientes": [
       {"nombre": "Arroz", "cantidad": 320, "unidad": "g"},
       {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
@@ -322,6 +343,7 @@
   },
   {
     "nombre": "Menestra de verduras",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/c/ca/Menestra_de_verduras_-_xurde.jpg",
     "ingredientes": [
       {"nombre": "Alcachofas", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Judías verdes", "cantidad": 200, "unidad": "g"},
@@ -340,6 +362,7 @@
   },
   {
     "nombre": "Pimientos rellenos de arroz",
+    "imagenUrl":"https://recetasveganas.net/wp-content/uploads/2019/04/recetas-veganas-faciles-pimientos-rellenos-arroz-hindu5.jpg",
     "ingredientes": [
       {"nombre": "Pimientos rojos", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Arroz", "cantidad": 200, "unidad": "g"},
@@ -355,6 +378,7 @@
   },
   {
     "nombre": "Tabulé de cuscús",
+    "imagenUrl":"https://www.laslindes.es/system/posts/imagenes/000/000/067/grande/tabule_cous_cous.jpg?1467997232",
     "ingredientes": [
       {"nombre": "Cuscús", "cantidad": 250, "unidad": "g"},
       {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
@@ -372,6 +396,7 @@
   },
   {
     "nombre": "Migas con verduras",
+    "imagenUrl":"https://canalcocina.es/medias/_cache/zoom-568c4e993e64950eac1b2af736fff6c0-920-518.jpg",
     "ingredientes": [
       {"nombre": "Pan duro", "cantidad": 400, "unidad": "g"},
       {"nombre": "Ajo", "cantidad": 4, "unidad": "dientes"},
@@ -387,6 +412,7 @@
   },
   {
     "nombre": "Lasaña de verduras",
+    "imagenUrl":"https://www.bekiacocina.com/images/cocina/0000/976-h.jpg",
     "ingredientes": [
       {"nombre": "Láminas de lasaña", "cantidad": 12, "unidad": "ud"},
       {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
@@ -405,6 +431,7 @@
   },
   {
     "nombre": "Ensalada caprese",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/c/ca/Menestra_de_verduras_-_xurde.jpg",
     "ingredientes": [
       {"nombre": "Tomate", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Mozzarella fresca", "cantidad": 250, "unidad": "g"},
@@ -419,6 +446,7 @@
   },
   {
     "nombre": "Risotto de champiñones",
+    "imagenUrl":"https://static.bainet.es/clip/8985787e-cdca-45d9-8e53-10ca186360a5_16-9-aspect-ratio_1600w_0.webp",
     "ingredientes": [
       {"nombre": "Arroz arborio", "cantidad": 320, "unidad": "g"},
       {"nombre": "Champiñones", "cantidad": 400, "unidad": "g"},
@@ -436,6 +464,7 @@
   },
   {
     "nombre": "Ratatouille",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ratatouille.jpg/960px-Ratatouille.jpg",
     "ingredientes": [
       {"nombre": "Berenjena", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Calabacín", "cantidad": 2, "unidad": "ud"},
@@ -454,6 +483,7 @@
   },
   {
     "nombre": "Curry de garbanzos",
+    "imagenUrl":"https://recetasdecocina.elmundo.es/wp-content/uploads/2024/09/curry-de-garbanzos.jpg",
     "ingredientes": [
       {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -472,6 +502,7 @@
   },
   {
     "nombre": "Quiche de espinacas y queso",
+    "imagenUrl":"https://imag.bonviveur.com/quiche-de-espinacas-y-queso.webp",
     "ingredientes": [
       {"nombre": "Masa quebrada", "cantidad": 1, "unidad": "lámina"},
       {"nombre": "Espinacas frescas", "cantidad": 300, "unidad": "g"},
@@ -489,6 +520,7 @@
   },
   {
     "nombre": "Fideuá de verduras",
+    "imagenUrl":"https://recetasdecocina.elmundo.es/wp-content/uploads/2025/05/fideua-de-verduras.jpg",
     "ingredientes": [
       {"nombre": "Fideos finos", "cantidad": 400, "unidad": "g"},
       {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
@@ -508,6 +540,7 @@
   },
   {
     "nombre": "Tostas de tomate y aguacate",
+    "imagenUrl":"https://www.justspices.es/media/opti_image/webp/recipe/resized/510x510/recipe/Avocado_Topping-8_1_.webp",
     "ingredientes": [
       {"nombre": "Pan rústico", "cantidad": 4, "unidad": "rebanadas"},
       {"nombre": "Aguacate maduro", "cantidad": 2, "unidad": "ud"},
@@ -522,6 +555,7 @@
   },
   {
     "nombre": "Sopa de verduras",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/f/ff/Asparagus_soup_%28spargelsuppe%29.jpg",
     "ingredientes": [
       {"nombre": "Patata", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Zanahoria", "cantidad": 2, "unidad": "ud"},
@@ -539,6 +573,7 @@
   },
   {
     "nombre": "Pasta al pesto",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Linguine_al_pesto.jpg/960px-Linguine_al_pesto.jpg",
     "ingredientes": [
       {"nombre": "Pasta", "cantidad": 400, "unidad": "g"},
       {"nombre": "Albahaca fresca", "cantidad": 60, "unidad": "g"},
@@ -554,6 +589,7 @@
   },
   {
     "nombre": "Pizza margarita casera",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/La_contenciosa_pizza_Margarita..._%40_Barrakuda%2C_SV.jpg/960px-La_contenciosa_pizza_Margarita..._%40_Barrakuda%2C_SV.jpg",
     "ingredientes": [
       {"nombre": "Masa de pizza", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
@@ -569,6 +605,7 @@
   },
   {
     "nombre": "Falafel casero",
+    "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Falafel_1.JPG/960px-Falafel_1.JPG",
     "ingredientes": [
       {"nombre": "Garbanzos secos", "cantidad": 250, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
@@ -587,6 +624,7 @@
   },
   {
     "nombre": "Empanadillas de espinacas",
+    "imagenUrl":"https://img.juanideanasevilla.com/thumb.php?noups&w=600&i=./archivos/i8s/a09aac36b2b86210d18d1940b13080ef3c6a4125.jpg",
     "ingredientes": [
       {"nombre": "Obleas para empanadillas", "cantidad": 16, "unidad": "ud"},
       {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
@@ -604,6 +642,7 @@
   },
   {
     "nombre": "Tomates rellenos de queso",
+    "imagenUrl":"https://okdiario.com/img/2018/03/07/tomates-rellenos-queso-jamon-655x368.jpg",
     "ingredientes": [
       {"nombre": "Tomates grandes", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Queso de cabra", "cantidad": 200, "unidad": "g"},
@@ -619,6 +658,7 @@
   },
   {
     "nombre": "Albóndigas de lentejas",
+    "imagenUrl":"https://www.recetasnestle.cl/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/91f02fb6d4ee7d19e95353505a2472f1.webp?itok=imDF3lkA",
     "ingredientes": [
       {"nombre": "Lentejas cocidas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},

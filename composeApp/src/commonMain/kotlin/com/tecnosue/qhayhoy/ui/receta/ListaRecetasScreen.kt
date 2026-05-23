@@ -1,5 +1,6 @@
 package com.tecnosue.qhayhoy.ui.receta
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -39,6 +40,17 @@ import com.composables.icons.lucide.Compass
 import com.tecnosue.qhayhoy.domain.OrigenReceta
 import com.tecnosue.qhayhoy.domain.Receta
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import coil3.compose.AsyncImage
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.width
+import com.composables.icons.lucide.Sparkles
+import qhayhoy.composeapp.generated.resources.Res
+import qhayhoy.composeapp.generated.resources.qhayhoy_logotexto
 
 /**
  * Pantalla de listado de recetas de la Casa activa.
@@ -87,8 +99,10 @@ fun ListaRecetasScreen(
                 actions = {
                     IconButton(onClick = onIrADescubrir) {
                         Icon(
-                            imageVector = Lucide.Compass,
-                            contentDescription = "Descubrir recetas"
+                            imageVector = Lucide.Sparkles,
+                            contentDescription = "Descubrir recetas",
+                            tint = MaterialTheme.colorScheme.primary
+
                         )
                     }
                 },
@@ -104,6 +118,8 @@ fun ListaRecetasScreen(
                     recetaViewModel.iniciarNuevaReceta(usuarioId)
                     onNuevaReceta()
                 },
+                containerColor = MaterialTheme.colorScheme.secondary,
+                contentColor = MaterialTheme.colorScheme.onSecondary,
                 icon = { Icon(imageVector = Lucide.Plus, contentDescription = null) },
                 text = { Text("Nueva receta") }
             )
@@ -180,46 +196,88 @@ private fun TarjetaReceta(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = receta.nombre.ifBlank { "(Sin nombre)" },
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
-            )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Imagen cuadrada a la izquierda
+            Box(
+                modifier = Modifier
+                    .size(72.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(MaterialTheme.colorScheme.surfaceVariant),
+                contentAlignment = Alignment.Center
+            ) {
+                if (!receta.imagenUrl.isNullOrBlank()) {
+                    AsyncImage(
+                        model = receta.imagenUrl,
+                        contentDescription = receta.nombre,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                } else {
+                    // Fallback: inicial del nombre
+                    Text(
+                        text = receta.nombre.firstOrNull()?.uppercase() ?: "?",
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
 
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.width(12.dp))
 
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            // Información de la receta a la derecha
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = etiquetaOrigen(receta.origen),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.primary
+                    text = receta.nombre.ifBlank { "(Sin nombre)" },
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    maxLines = 2
                 )
 
-                if (receta.tiempoPreparacionMin != null) {
+                Spacer(modifier = Modifier.height(4.dp))
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
-                        text = "  •  ${receta.tiempoPreparacionMin} min",
+                        text = etiquetaOrigen(receta.origen),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+
+                    if (receta.tiempoPreparacionMin != null) {
+                        Text(
+                            text = "  •  ${receta.tiempoPreparacionMin} min",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+
+                    Text(
+                        text = "  •  ${receta.raciones} rac.",
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
 
-                Text(
-                    text = "  •  ${receta.raciones} raciones",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-
-            if (receta.ingredientes.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "${receta.ingredientes.size} ingrediente(s)",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                if (receta.ingredientes.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Text(
+                        text = "${receta.ingredientes.size} ingrediente(s)",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
         }
     }

@@ -126,6 +126,13 @@ class RecetaViewModel(
     }
 
     // --- Acciones de campos del editor ---
+    fun onImagenUrlChange(nuevaUrl: String) {
+        _uiState.value = _uiState.value.copy(
+            recetaEnEdicion = _uiState.value.recetaEnEdicion.copy(
+                imagenUrl = nuevaUrl.ifBlank { null }
+            )
+        )
+    }
 
     fun onNombreChange(nuevoNombre: String) {
         _uiState.value = _uiState.value.copy(

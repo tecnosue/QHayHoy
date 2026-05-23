@@ -25,6 +25,13 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.layout.ContentScale
+import org.jetbrains.compose.resources.painterResource
+import qhayhoy.composeapp.generated.resources.Res
+import qhayhoy.composeapp.generated.resources.qhayhoy_logotexto
 
 /**
  * Pantalla de inicio de sesión.
@@ -50,21 +57,30 @@ fun LoginScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .safeContentPadding()
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Image(
+            painter = painterResource(Res.drawable.qhayhoy_logotexto),
+            contentDescription = "QHayHoy",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .fillMaxWidth(2f)  // ocupa 2 veces el espacio horizontal disponible
+                .padding(vertical = 24.dp)
+        )
         // Título de la app
-        Text(
-            text = "QHayHoy",
-            style = MaterialTheme.typography.displayMedium,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            text = "Menús para no pensar",
-            style = MaterialTheme.typography.bodyLarge
-        )
+//        Text(
+//            text = "QHayHoy",
+//            style = MaterialTheme.typography.displayMedium,
+//            fontWeight = FontWeight.Bold
+//        )
+//        Text(
+//            text = "Menús para no pensar",
+//            style = MaterialTheme.typography.bodyLarge
+//        )
 
         Spacer(modifier = Modifier.height(48.dp))
 

@@ -1,5 +1,6 @@
 package com.tecnosue.qhayhoy.ui.receta
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,6 +45,11 @@ import com.composables.icons.lucide.Plus
 import com.composables.icons.lucide.Trash2
 import com.tecnosue.qhayhoy.domain.Ingrediente
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import coil3.compose.AsyncImage
 
 /**
  * Pantalla para crear o editar una receta.
@@ -154,6 +160,32 @@ fun EditorRecetaScreen(
                     modifier = Modifier.weight(1f)
                 )
             }
+            // --- URL de imagen ---
+            OutlinedTextField(
+                value = receta.imagenUrl ?: "",
+                onValueChange = { recetaViewModel.onImagenUrlChange(it) },
+                label = { Text("URL de la imagen (opcional)") },
+                placeholder = { Text("https://...") },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            // Previsualización de la imagen si hay URL válida
+            if (!receta.imagenUrl.isNullOrBlank()) {
+                Box(
+                    modifier = Modifier
+                        .size(width = 200.dp, height = 150.dp)
+                        .clip(RoundedCornerShape(12.dp)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    AsyncImage(
+                        model = receta.imagenUrl,
+                        contentDescription = "Previsualización",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
+            }
 
             // --- Ingredientes ---
             SeccionIngredientes(
@@ -217,6 +249,11 @@ private fun SeccionIngredientes(
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -318,6 +355,11 @@ private fun SeccionPasos(
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {

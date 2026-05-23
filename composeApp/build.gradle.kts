@@ -22,6 +22,7 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.android)
+
         }
         commonMain.dependencies {
             // Compose Multiplatform

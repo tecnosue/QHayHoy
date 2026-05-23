@@ -1,5 +1,6 @@
 package com.tecnosue.qhayhoy.ui.receta
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -46,6 +47,14 @@ import com.composables.icons.lucide.Pencil
 import com.composables.icons.lucide.Trash2
 import com.tecnosue.qhayhoy.domain.OrigenReceta
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.sp
+import coil3.compose.AsyncImage
+import androidx.compose.foundation.background
 
 /**
  * Pantalla de detalle de una receta.
@@ -139,10 +148,36 @@ fun DetalleRecetaScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            // --- Imagen de cabecera ---
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(16f / 9f)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(MaterialTheme.colorScheme.surfaceVariant),
+                contentAlignment = Alignment.Center
+            ) {
+                if (!receta.imagenUrl.isNullOrBlank()) {
+                    AsyncImage(
+                        model = receta.imagenUrl,
+                        contentDescription = receta.nombre,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                } else {
+                    // Fallback: inicial grande de la receta
+                    Text(
+                        text = receta.nombre.firstOrNull()?.uppercase() ?: "?",
+                        fontSize = 64.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
             // Cabecera con nombre y metadatos
             Text(
                 text = receta.nombre,
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.Bold
             )
 
@@ -186,6 +221,11 @@ fun DetalleRecetaScreen(
             } else {
                 Card(
                     modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.surface
+                    ),
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
                     elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
@@ -232,6 +272,11 @@ fun DetalleRecetaScreen(
                 receta.pasos.forEachIndexed { indice, paso ->
                     Card(
                         modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(16.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surface
+                        ),
+                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
                         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
                     ) {
                         Row(

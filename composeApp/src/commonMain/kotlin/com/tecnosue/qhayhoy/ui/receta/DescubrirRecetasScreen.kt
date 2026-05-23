@@ -1,5 +1,6 @@
 package com.tecnosue.qhayhoy.ui.receta
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -86,7 +87,7 @@ fun DescubrirRecetasScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                    containerColor = MaterialTheme.colorScheme.background
                 )
             )
         }
@@ -107,12 +108,36 @@ fun DescubrirRecetasScreen(
                 FilterChip(
                     selected = state.filtroDieta == FiltroDieta.VEGETARIANA,
                     onClick = { recetaViewModel.cambiarFiltroDieta(FiltroDieta.VEGETARIANA) },
-                    label = { Text("Vegetariana") }
+                    label = { Text("Vegetariana") },
+                    colors = FilterChipDefaults.filterChipColors(
+                        containerColor = MaterialTheme.colorScheme.surface,
+                        labelColor = MaterialTheme.colorScheme.onSurface,
+                        selectedContainerColor = MaterialTheme.colorScheme.primary,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimary
+                    ),
+                    border = FilterChipDefaults.filterChipBorder(
+                        enabled = true,
+                        selected = state.filtroDieta == FiltroDieta.VEGETARIANA,
+                        borderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
+                        selectedBorderColor = MaterialTheme.colorScheme.primary
+                    )
                 )
                 FilterChip(
                     selected = state.filtroDieta == FiltroDieta.VEGANA,
                     onClick = { recetaViewModel.cambiarFiltroDieta(FiltroDieta.VEGANA) },
-                    label = { Text("Vegana") }
+                    label = { Text("Vegana") },
+                    colors = FilterChipDefaults.filterChipColors(
+                        containerColor = MaterialTheme.colorScheme.surface,
+                        labelColor = MaterialTheme.colorScheme.onSurface,
+                        selectedContainerColor = MaterialTheme.colorScheme.primary,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimary
+                    ),
+                    border = FilterChipDefaults.filterChipBorder(
+                        enabled = true,
+                        selected = state.filtroDieta == FiltroDieta.VEGANA,
+                        borderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
+                        selectedBorderColor = MaterialTheme.colorScheme.primary
+                    )
                 )
             }
 
@@ -195,8 +220,12 @@ private fun TarjetaRecetaExterna(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
     ) {
         Column {
             Box(

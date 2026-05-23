@@ -6,21 +6,19 @@ import androidx.compose.ui.graphics.Color
 // Paleta QHayHoy — extraída del mockup (mayo 2026)
 // ═══════════════════════════════════════════════════════════════
 
-// ─── Verdes oliva (acción primaria) ───
-val OlivaFuerte       = Color(0xFF4E660D)  // Botón "Iniciar sesión", texto "QHayHoy"
-val OlivaMedio        = Color(0xFF7F9A50)  // Botón "Crear Casa", avatar
-val OlivaTitulares    = Color(0xFF466225)  // "Lunes", "Martes"... en Menú semanal
-val OlivaBadgeClaro   = Color(0xFFEDF0E9)  // Fondo del icono cubiertos / casita
+// ─── Verdes (acción primaria) ───
+val VerdeOscuro       = Color(0xFF4E670E)  // Botón "Iniciar sesión", texto "QHayHoy"
+val VerdeOliva        = Color(0xFF7A9E3F)  // Acentos secundarios verdes
+val VerdeClaro        = Color(0xFFEDF0E6)  // Fondos tenues / badge claro
 
 // ─── Naranjas (acción secundaria) ───
-val NaranjaFuerte     = Color(0xFFFC9B54)  // Botón "Generar menú"
-val NaranjaFAB        = Color(0xFFE6853F)  // FAB "+" en Recetas
-val NaranjaApagado    = Color(0xFFD99D6B)  // Botón "Unirme"
-val NaranjaBadgeClaro = Color(0xFFEAB899)  // Badge del icono llave
+val NaranjaFuerte     = Color(0xFFE8833A)  // Botón "Generar menú", "Unirme"
+val NaranjaApagado    = Color(0xFFD99D6B)  // Acento terciario (variante suave)
+val NaranjaBadgeClaro = Color(0xFFEAB899)  // Badge tenue del icono llave
 
 // ─── Fondos crema ───
-val CremaFondo        = Color(0xFFFAF7F0)  // Background general
-val CremaFondoAlt     = Color(0xFFF8F9EE)  // Hueco entre cards (matiz oliva)
+val CremaFondo        = Color(0xFFFAFAEE)  // Background general
+val CremaFondoAlt     = Color(0xFFF8F9EE)  // Variante crema más cálida
 val CremaInput        = Color(0xFFEEEEE2)  // Inputs y cards alternativas
 val Blanco            = Color(0xFFFFFFFF)  // Surface de cards principales
 

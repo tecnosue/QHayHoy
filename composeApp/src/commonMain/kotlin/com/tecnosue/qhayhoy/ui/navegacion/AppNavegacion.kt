@@ -118,14 +118,20 @@ fun AppNavegacion() {
                 onIrARecetas = {
                     navController.navigate(Rutas.ListaRecetas)
                 },
+                onIrADescubrir = {
+                    navController.navigate(Rutas.DescubrirRecetas)
+                },
+                onIrAListaCompra = { semanaId, casaId ->
+                    navController.navigate(Rutas.ListaCompra(casaId, semanaId))
+                },
                 onCambiarDeCasa = {
                     navController.navigate(Rutas.GestionCasa) {
                         popUpTo(Rutas.Principal) { inclusive = true }
                     }
                 },
                 onIrAMenu = { semanaId, casaId, miembrosIds ->
-                    println("QHAYHOY >>> Ejecutando navigate a MenuSemanal")
-                    navController.navigate(Rutas.MenuSemanal(semanaId, casaId, miembrosIds))                }
+                    navController.navigate(Rutas.MenuSemanal(semanaId, casaId, miembrosIds))
+                }
             )
         }
         // --- Pantallas de recetas (RF3) ---
