@@ -3,7 +3,9 @@ package com.tecnosue.qhayhoy.ui.casa
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tecnosue.qhayhoy.data.CasaRepository
+import com.tecnosue.qhayhoy.data.MenuRepository
 import com.tecnosue.qhayhoy.domain.Casa
+import com.tecnosue.qhayhoy.domain.obtenerIdSemanaActual
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -33,7 +35,9 @@ data class CasaUiState(
  * a las que pertenece el usuario.
  */
 class CasaViewModel(
-    private val casaRepository: CasaRepository
+    private val casaRepository: CasaRepository,
+    private val menuRepository: MenuRepository
+
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(CasaUiState())
@@ -123,6 +127,19 @@ class CasaViewModel(
                     codigoInvitacion = estadoActual.codigoInvitacion,
                     usuarioId = usuarioId
                 )
+                // RF5.1: al unirse, asumimos asistencia por defecto en el menú
+                // de la semana actual si ya existe.
+                try {
+                    menuRepository.anadirMiembroAAsistencias(
+                        casaId = casa.id,
+                        semanaId = obtenerIdSemanaActual(),
+                        usuarioId = usuarioId
+                    )
+                } catch (e: Exception) {
+                    // No bloqueamos el flujo si la migración falla.
+                    // El usuario podrá marcar su asistencia manualmente.
+                    e.printStackTrace()
+                }
                 _uiState.value = _uiState.value.copy(
                     cargando = false,
                     casaSeleccionada = casa,

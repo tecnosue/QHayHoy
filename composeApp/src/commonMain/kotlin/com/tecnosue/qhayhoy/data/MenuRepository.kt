@@ -122,4 +122,30 @@ class MenuRepository {
         val menuActualizado = menuActual.copy(asistencias = asistenciasActualizadas)
         menuRef(casaId).document(semanaId).set(menuActualizado)
     }
+
+    /**
+     * Añade un miembro a todas las asistencias del menú indicado.
+     * Si el menú no existe, no hace nada (aún no se ha generado).
+     *
+     * Se usa cuando un usuario se une a una Casa que ya tiene menú generado,
+     * para cumplir RF5.1 (asistencia por defecto a todas las comidas).
+     */
+    suspend fun anadirMiembroAAsistencias(
+        casaId: String,
+        semanaId: String,
+        usuarioId: String
+    ) {
+        val snapshot = menuRef(casaId).document(semanaId).get()
+        if (!snapshot.exists) return  // No hay menú aún, nada que migrar
+
+        val menu = snapshot.data(MenuSemanal.serializer())
+
+        val asistenciasActualizadas = menu.asistencias.mapValues { (_, lista) ->
+            if (usuarioId in lista) lista else lista + usuarioId
+        }
+
+        menuRef(casaId).document(semanaId).set(
+            menu.copy(asistencias = asistenciasActualizadas)
+        )
+    }
 }

@@ -2,6 +2,7 @@ package com.tecnosue.qhayhoy
 
 import com.tecnosue.qhayhoy.data.CasaRepository
 import com.tecnosue.qhayhoy.data.CatalogoLoader
+import com.tecnosue.qhayhoy.data.ListaCompraRepository
 import com.tecnosue.qhayhoy.data.MenuRepository
 import com.tecnosue.qhayhoy.data.RecetaExternaRepository
 import com.tecnosue.qhayhoy.data.RecetaRepository
@@ -9,6 +10,7 @@ import com.tecnosue.qhayhoy.data.UsuarioRepository
 import com.tecnosue.qhayhoy.data.mealdb.MealDbApiClient
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
+import com.tecnosue.qhayhoy.ui.listacompra.ListaCompraViewModel
 import com.tecnosue.qhayhoy.ui.menu.MenuSemanalViewModel
 import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
 import org.koin.core.module.dsl.viewModelOf
@@ -35,6 +37,8 @@ val appModule = module {
     single { CasaRepository(get()) }
     single { MenuRepository() }
     single { RecetaExternaRepository(get()) }
+    single { ListaCompraRepository() }
+
 
 
 
@@ -46,6 +50,7 @@ val appModule = module {
     viewModelOf(::CasaViewModel)
     viewModelOf(::RecetaViewModel)
     viewModelOf(::MenuSemanalViewModel)
+    viewModelOf(::ListaCompraViewModel)
 
 
 }

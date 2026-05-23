@@ -21,6 +21,7 @@ import com.tecnosue.qhayhoy.domain.ComidaDia
 import com.tecnosue.qhayhoy.domain.DiaSemana
 import com.tecnosue.qhayhoy.domain.Receta
 import androidx.compose.material3.Checkbox
+import com.composables.icons.lucide.ShoppingCart
 
 
 /**
@@ -37,7 +38,9 @@ fun MenuSemanalScreen(
     miembrosIds: List<String>,
     usuarioActualId: String,
     onVolver: () -> Unit,
-    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit
+    onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
+    onIrAListaCompra: () -> Unit
+
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -60,7 +63,10 @@ fun MenuSemanalScreen(
         onSustituirClick = { dia, tipo -> platoASustituir = dia to tipo },
         onCambiarMiAsistencia = { dia, tipo, asistira ->
             viewModel.cambiarAsistencia(casaId, semanaId, dia, tipo, usuarioActualId, asistira)
-        }
+        },
+        onIrAListaCompra = onIrAListaCompra
+
+
     )
 
     platoASustituir?.let { (dia, tipo) ->
@@ -92,7 +98,9 @@ fun MenuSemanalContent(
     onVolver: () -> Unit,
     onPlatoClick: (dia: String, tipo: String, recetaId: String) -> Unit,
     onSustituirClick: (dia: String, tipo: String) -> Unit,
-    onCambiarMiAsistencia: (dia: String, tipo: String, asistira: Boolean) -> Unit
+    onCambiarMiAsistencia: (dia: String, tipo: String, asistira: Boolean) -> Unit,
+    onIrAListaCompra: () -> Unit
+
 ) {
     Scaffold(
         topBar = {
@@ -103,6 +111,14 @@ fun MenuSemanalContent(
                         Icon(
                             imageVector = Lucide.ArrowLeft,
                             contentDescription = "Volver"
+                        )
+                    }
+                },
+                actions = {
+                    IconButton(onClick = onIrAListaCompra) {
+                        Icon(
+                            imageVector = Lucide.ShoppingCart,
+                            contentDescription = "Lista de la compra"
                         )
                     }
                 },

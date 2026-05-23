@@ -53,4 +53,9 @@ object Rutas {
         val casaId: String,
         val miembrosIds: List<String>  // si Serializable lo permite; si no, pásalo como string separado por comas
     )
+    @Serializable
+    data class ListaCompra(
+        val casaId: String,
+        val semanaId: String
+    )
 }

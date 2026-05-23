@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.tecnosue.qhayhoy.domain.obtenerIdSemanaActual
 import com.tecnosue.qhayhoy.ui.auth.AuthViewModel
 import com.tecnosue.qhayhoy.ui.navegacion.Rutas
 import kotlinx.datetime.*
@@ -167,17 +168,4 @@ fun PrincipalScreen(
             Text("Cerrar sesión")
         }
     }
-}
-/**
- * Helper para obtener el ID de la semana (ej. "2026-04-27").
- * Siempre devuelve la fecha correspondiente al Lunes de la semana actual.
- */
-fun obtenerIdSemanaActual(): String {
-    val hoy = Clock.System.todayIn(TimeZone.currentSystemDefault())
-
-    // Usamos isoDayNumber (1 para Lunes, 7 para Domingo) que es 100% Kotlin
-    val diasARestar = hoy.dayOfWeek.isoDayNumber - DayOfWeek.MONDAY.isoDayNumber
-    val lunes = hoy.minus(DatePeriod(days = diasARestar))
-
-    return lunes.toString()
 }

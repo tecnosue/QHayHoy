@@ -14,6 +14,8 @@ import com.tecnosue.qhayhoy.ui.auth.RegistroScreen
 import com.tecnosue.qhayhoy.ui.casa.CasaViewModel
 import com.tecnosue.qhayhoy.ui.casa.GestionCasaScreen
 import com.tecnosue.qhayhoy.ui.casa.PrincipalScreen
+import com.tecnosue.qhayhoy.ui.listacompra.ListaCompraScreen
+import com.tecnosue.qhayhoy.ui.listacompra.ListaCompraViewModel
 import com.tecnosue.qhayhoy.ui.menu.MenuSemanalScreen
 import com.tecnosue.qhayhoy.ui.menu.MenuSemanalViewModel
 import com.tecnosue.qhayhoy.ui.receta.DescubrirRecetasScreen
@@ -214,7 +216,21 @@ fun AppNavegacion() {
                     if (recetaId.isNotBlank()) {
                         navController.navigate(Rutas.DetalleReceta(recetaId))
                     }
+                },
+                onIrAListaCompra = {
+                    navController.navigate(Rutas.ListaCompra(args.casaId, args.semanaId))
                 }
+            )
+        }
+
+        composable<Rutas.ListaCompra> { backStackEntry ->
+            val args = backStackEntry.toRoute<Rutas.ListaCompra>()
+            val listaCompraViewModel: ListaCompraViewModel = koinViewModel()
+            ListaCompraScreen(
+                viewModel = listaCompraViewModel,
+                casaId = args.casaId,
+                semanaId = args.semanaId,
+                onVolver = { navController.popBackStack() }
             )
         }
     }
