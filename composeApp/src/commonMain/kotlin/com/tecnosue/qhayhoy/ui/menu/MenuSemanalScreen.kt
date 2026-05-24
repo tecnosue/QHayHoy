@@ -23,6 +23,13 @@ import com.tecnosue.qhayhoy.domain.DiaSemana
 import com.tecnosue.qhayhoy.domain.Receta
 import androidx.compose.material3.Checkbox
 import com.composables.icons.lucide.ShoppingCart
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import coil3.compose.AsyncImage
 
 
 /**
@@ -409,21 +416,62 @@ fun SustituirPlatoBottomSheet(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clickable { onRecetaSeleccionada(receta.id) },
+                            shape = RoundedCornerShape(16.dp),
+                            colors = CardDefaults.cardColors(
+                                containerColor = MaterialTheme.colorScheme.surface
+                            ),
+                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.2f)),
                             elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
                         ) {
-                            Column(modifier = Modifier.padding(12.dp)) {
-                                Text(
-                                    text = receta.nombre.ifBlank { "(Sin nombre)" },
-                                    fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.onSurface
-                                )
-                                if (receta.tiempoPreparacionMin != null) {
-                                    Spacer(modifier = Modifier.height(2.dp))
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(12.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                // Imagen miniatura a la izquierda
+                                Box(
+                                    modifier = Modifier
+                                        .size(56.dp)
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(MaterialTheme.colorScheme.surfaceVariant),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    if (!receta.imagenUrl.isNullOrBlank()) {
+                                        AsyncImage(
+                                            model = receta.imagenUrl,
+                                            contentDescription = receta.nombre,
+                                            contentScale = ContentScale.Crop,
+                                            modifier = Modifier.fillMaxSize()
+                                        )
+                                    } else {
+                                        Text(
+                                            text = receta.nombre.firstOrNull()?.uppercase() ?: "?",
+                                            style = MaterialTheme.typography.titleLarge,
+                                            fontWeight = FontWeight.Bold,
+                                            color = MaterialTheme.colorScheme.primary
+                                        )
+                                    }
+                                }
+
+                                Spacer(modifier = Modifier.width(12.dp))
+
+                                // Información de la receta
+                                Column(modifier = Modifier.weight(1f)) {
                                     Text(
-                                        text = "${receta.tiempoPreparacionMin} min · ${receta.raciones} raciones",
-                                        fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        text = receta.nombre.ifBlank { "(Sin nombre)" },
+                                        fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                        maxLines = 2
                                     )
+                                    if (receta.tiempoPreparacionMin != null) {
+                                        Spacer(modifier = Modifier.height(2.dp))
+                                        Text(
+                                            text = "${receta.tiempoPreparacionMin} min · ${receta.raciones} raciones",
+                                            fontSize = 12.sp,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        )
+                                    }
                                 }
                             }
                         }

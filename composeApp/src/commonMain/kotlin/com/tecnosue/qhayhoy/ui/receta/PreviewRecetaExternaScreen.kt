@@ -107,7 +107,19 @@ fun PreviewRecetaExternaScreen(
                         .padding(padding),
                     contentAlignment = Alignment.Center
                 ) {
-                    CircularProgressIndicator()
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        CircularProgressIndicator(
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            text = "Traduciendo receta...",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
                 }
             }
 
@@ -234,8 +246,8 @@ fun PreviewRecetaExternaScreen(
 
                         // Aviso de origen
                         Text(
-                            text = "Nota: las recetas se importan en su idioma original (inglés) " +
-                                    "desde TheMealDB. Una vez importadas, podrás editarlas en tu Casa.",
+                            text = "Esta receta se ha traducido automáticamente del inglés. " +
+                                    "Puedes editarla y mejorarla después de importarla a tu Casa.",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )

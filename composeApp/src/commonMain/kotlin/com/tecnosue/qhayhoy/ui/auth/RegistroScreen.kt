@@ -1,5 +1,7 @@
 package com.tecnosue.qhayhoy.ui.auth
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,10 +23,14 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.painterResource
+import qhayhoy.composeapp.generated.resources.Res
+import qhayhoy.composeapp.generated.resources.qhayhoy_logotexto
 
 /**
  * Pantalla de registro de nuevo usuario (RF1.1).
@@ -50,15 +56,23 @@ fun RegistroScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .safeContentPadding()
             .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Image(
+            painter = painterResource(Res.drawable.qhayhoy_logotexto),
+            contentDescription = "QHayHoy",
+            contentScale = ContentScale.Fit,
+            modifier = Modifier
+                .fillMaxWidth(2f)  // ocupa 2 veces el espacio horizontal disponible
+                .padding(vertical = 24.dp)
+        )
         Text(
             text = "Crear cuenta",
             style = MaterialTheme.typography.displaySmall,
-            fontWeight = FontWeight.Bold
         )
 
         Spacer(modifier = Modifier.height(32.dp))

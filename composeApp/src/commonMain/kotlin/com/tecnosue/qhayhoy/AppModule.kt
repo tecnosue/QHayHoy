@@ -15,6 +15,8 @@ import com.tecnosue.qhayhoy.ui.menu.MenuSemanalViewModel
 import com.tecnosue.qhayhoy.ui.receta.RecetaViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
+import com.tecnosue.qhayhoy.data.translator.MyMemoryClient
+import com.tecnosue.qhayhoy.data.translator.TraductorRepository
 
 /**
  * Módulo principal de Koin.
@@ -36,8 +38,10 @@ val appModule = module {
     single { CatalogoLoader(get()) }
     single { CasaRepository(get()) }
     single { MenuRepository() }
-    single { RecetaExternaRepository(get()) }
+    single { RecetaExternaRepository(get(), get()) }
     single { ListaCompraRepository() }
+    single { MyMemoryClient(emailContacto = "qhayhoymenusparanopensar@gmail.com") }
+    single { TraductorRepository(get()) }
 
 
 
