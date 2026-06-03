@@ -5,10 +5,10 @@
 
     "ingredientes": [
       {"nombre": "Patatas", "cantidad": 600, "unidad": "g"},
-      {"nombre": "Huevos", "cantidad": 6, "unidad": "ud"},
+      {"nombre": "Huevo", "cantidad": 6, "unidad": "ud"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Aceite de oliva", "cantidad": 200, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 40,
     "raciones": 4,
@@ -24,11 +24,11 @@
       {"nombre": "Patata", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
       {"nombre": "Laurel", "cantidad": 1, "unidad": "hoja"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 45,
     "raciones": 4,
@@ -42,11 +42,11 @@
       {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Cebolla", "cantidad": 0.5, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 1, "unidad": "diente"},
+      {"nombre": "Ajo", "cantidad": 5, "unidad": "g"},
       {"nombre": "Pan", "cantidad": 50, "unidad": "g"},
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 80, "unidad": "ml"},
       {"nombre": "Vinagre de Jerez", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 15,
     "raciones": 4,
@@ -63,7 +63,7 @@
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate triturado", "cantidad": 400, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 50,
     "raciones": 4,
@@ -79,8 +79,9 @@
       {"nombre": "Caldo de verduras", "cantidad": 750, "unidad": "ml"},
       {"nombre": "Nata para cocinar", "cantidad": 100, "unidad": "ml"},
       {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Nuez moscada", "cantidad": 0.5, "unidad": "g"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 35,
     "raciones": 4,
@@ -93,12 +94,12 @@
       {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
       {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Comino", "cantidad": 0.5, "unidad": "cucharadita"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
+      {"nombre": "Comino", "cantidad": 1.5, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 30,
     "raciones": 4,
@@ -114,11 +115,11 @@
       {"nombre": "Alcachofas", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Azafrán", "cantidad": 1, "unidad": "pizca"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Azafrán", "cantidad": 0.1, "unidad": "g"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 60, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 45,
     "raciones": 4,
@@ -131,9 +132,9 @@
       {"nombre": "Espinacas frescas", "cantidad": 600, "unidad": "g"},
       {"nombre": "Pasas", "cantidad": 50, "unidad": "g"},
       {"nombre": "Piñones", "cantidad": 50, "unidad": "g"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 20,
     "raciones": 4,
@@ -150,7 +151,8 @@
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
       {"nombre": "Queso rallado", "cantidad": 100, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 50,
     "raciones": 4,
@@ -162,11 +164,11 @@
     "ingredientes": [
       {"nombre": "Patatas", "cantidad": 500, "unidad": "g"},
       {"nombre": "Zanahorias", "cantidad": 2, "unidad": "ud"},
-      {"nombre": "Huevos cocidos", "cantidad": 3, "unidad": "ud"},
+      {"nombre": "Huevo cocidos", "cantidad": 3, "unidad": "ud"},
       {"nombre": "Guisantes cocidos", "cantidad": 150, "unidad": "g"},
       {"nombre": "Aceitunas verdes", "cantidad": 100, "unidad": "g"},
       {"nombre": "Mayonesa", "cantidad": 200, "unidad": "g"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 30,
     "raciones": 4,
@@ -183,9 +185,9 @@
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Huevo", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Pan rallado", "cantidad": 200, "unidad": "g"},
-      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Nuez moscada", "cantidad": 0.5, "unidad": "g"},
       {"nombre": "Aceite para freír", "cantidad": 500, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 60,
     "raciones": 4,
@@ -198,11 +200,11 @@
       {"nombre": "Patatas", "cantidad": 800, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Pimiento choricero", "cantidad": 2, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Pimentón dulce", "cantidad": 8, "unidad": "g"},
       {"nombre": "Laurel", "cantidad": 1, "unidad": "hoja"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 40,
     "raciones": 4,
@@ -214,12 +216,14 @@
     "ingredientes": [
       {"nombre": "Tomates maduros", "cantidad": 1, "unidad": "kg"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
       {"nombre": "Caldo de verduras", "cantidad": 500, "unidad": "ml"},
-      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Albahaca fresca", "cantidad": 20, "unidad": "g"},
+
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Azúcar", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Azúcar", "cantidad": 5, "unidad": "g"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 30,
     "raciones": 4,
@@ -232,11 +236,11 @@
       {"nombre": "Garbanzos cocidos", "cantidad": 400, "unidad": "g"},
       {"nombre": "Tahini", "cantidad": 60, "unidad": "g"},
       {"nombre": "Limón", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "pizca"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Comino", "cantidad": 3, "unidad": "g"},
+      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 10,
     "raciones": 4,
@@ -247,11 +251,12 @@
     "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/a/a5/Revuelto_de_huevos%2C_ajetes_y_setas.jpg",
     "ingredientes": [
       {"nombre": "Setas variadas", "cantidad": 400, "unidad": "g"},
-      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
-      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Huevo", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
+      {"nombre": "Perejil fresco", "cantidad": 25, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 20,
     "raciones": 4,
@@ -268,7 +273,7 @@
       {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Aceitunas negras", "cantidad": 50, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 50,
     "raciones": 4,
@@ -280,11 +285,11 @@
     "ingredientes": [
       {"nombre": "Pan duro", "cantidad": 200, "unidad": "g"},
       {"nombre": "Ajo", "cantidad": 6, "unidad": "dientes"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
       {"nombre": "Caldo de verduras", "cantidad": 1000, "unidad": "ml"},
-      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Huevo", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 25,
     "raciones": 4,
@@ -301,7 +306,8 @@
       {"nombre": "Tomate triturado", "cantidad": 150, "unidad": "g"},
       {"nombre": "Queso feta", "cantidad": 100, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 45,
     "raciones": 4,
@@ -319,7 +325,8 @@
       {"nombre": "Aceitunas negras", "cantidad": 50, "unidad": "g"},
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
       {"nombre": "Vinagre", "cantidad": 15, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 15,
     "raciones": 4,
@@ -330,12 +337,12 @@
     "imagenUrl":"https://upload.wikimedia.org/wikipedia/commons/6/68/Arroz_a_la_cubana_en_LLanes.jpg",
     "ingredientes": [
       {"nombre": "Arroz", "cantidad": 320, "unidad": "g"},
-      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Huevo", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Plátanos", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Tomate frito", "cantidad": 300, "unidad": "g"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 30,
     "raciones": 4,
@@ -351,10 +358,10 @@
       {"nombre": "Zanahoria", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Espárragos verdes", "cantidad": 200, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Harina", "cantidad": 1, "unidad": "cucharada"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Harina", "cantidad": 10, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 40, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 40,
     "raciones": 4,
@@ -370,7 +377,8 @@
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
       {"nombre": "Queso rallado", "cantidad": 100, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 50,
     "raciones": 4,
@@ -384,11 +392,12 @@
       {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Pepino", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Cebolla morada", "cantidad": 0.5, "unidad": "ud"},
-      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
-      {"nombre": "Hierbabuena", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Perejil fresco", "cantidad": 25, "unidad": "g"},
+      {"nombre": "Hierbabuena", "cantidad": 20, "unidad": "g"},
+
       {"nombre": "Limón", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 20,
     "raciones": 4,
@@ -402,9 +411,9 @@
       {"nombre": "Ajo", "cantidad": 4, "unidad": "dientes"},
       {"nombre": "Pimiento verde", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Pimiento rojo", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 80, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 35,
     "raciones": 4,
@@ -423,7 +432,8 @@
       {"nombre": "Bechamel", "cantidad": 500, "unidad": "ml"},
       {"nombre": "Queso rallado", "cantidad": 200, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 70,
     "raciones": 6,
@@ -435,10 +445,12 @@
     "ingredientes": [
       {"nombre": "Tomate", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Mozzarella fresca", "cantidad": 250, "unidad": "g"},
-      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Albahaca fresca", "cantidad": 20, "unidad": "g"},
+
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 40, "unidad": "ml"},
       {"nombre": "Vinagre balsámico", "cantidad": 15, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 10,
     "raciones": 4,
@@ -456,7 +468,8 @@
       {"nombre": "Mantequilla", "cantidad": 50, "unidad": "g"},
       {"nombre": "Queso parmesano", "cantidad": 80, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 35,
     "raciones": 4,
@@ -472,10 +485,11 @@
       {"nombre": "Pimiento amarillo", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Hierbas provenzales", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Hierbas provenzales", "cantidad": 3, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 60,
     "raciones": 4,
@@ -487,14 +501,15 @@
     "ingredientes": [
       {"nombre": "Garbanzos cocidos", "cantidad": 500, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Jengibre fresco", "cantidad": 20, "unidad": "g"},
       {"nombre": "Tomate triturado", "cantidad": 400, "unidad": "g"},
       {"nombre": "Leche de coco", "cantidad": 400, "unidad": "ml"},
-      {"nombre": "Curry en polvo", "cantidad": 2, "unidad": "cucharadas"},
-      {"nombre": "Cilantro fresco", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Curry en polvo", "cantidad": 16, "unidad": "g"},
+      {"nombre": "Cilantro fresco", "cantidad": 20, "unidad": "g"},
+
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 30,
     "raciones": 4,
@@ -506,13 +521,14 @@
     "ingredientes": [
       {"nombre": "Masa quebrada", "cantidad": 1, "unidad": "lámina"},
       {"nombre": "Espinacas frescas", "cantidad": 300, "unidad": "g"},
-      {"nombre": "Huevos", "cantidad": 4, "unidad": "ud"},
+      {"nombre": "Huevo", "cantidad": 4, "unidad": "ud"},
       {"nombre": "Nata para cocinar", "cantidad": 200, "unidad": "ml"},
       {"nombre": "Queso emmental rallado", "cantidad": 150, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Nuez moscada", "cantidad": 0.5, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 50,
     "raciones": 6,
@@ -529,10 +545,10 @@
       {"nombre": "Calabacín", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Champiñones", "cantidad": 200, "unidad": "g"},
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Pimentón dulce", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Pimentón dulce", "cantidad": 3, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 35,
     "raciones": 4,
@@ -547,7 +563,8 @@
       {"nombre": "Tomate", "cantidad": 2, "unidad": "ud"},
       {"nombre": "Limón", "cantidad": 0.5, "unidad": "ud"},
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 10,
     "raciones": 2,
@@ -565,7 +582,7 @@
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Caldo de verduras", "cantidad": 1500, "unidad": "ml"},
       {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 35,
     "raciones": 4,
@@ -578,10 +595,10 @@
       {"nombre": "Pasta", "cantidad": 400, "unidad": "g"},
       {"nombre": "Albahaca fresca", "cantidad": 60, "unidad": "g"},
       {"nombre": "Piñones", "cantidad": 50, "unidad": "g"},
-      {"nombre": "Ajo", "cantidad": 1, "unidad": "diente"},
+      {"nombre": "Ajo", "cantidad": 5, "unidad": "g"},
       {"nombre": "Queso parmesano", "cantidad": 80, "unidad": "g"},
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 100, "unidad": "ml"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 20,
     "raciones": 4,
@@ -594,10 +611,11 @@
       {"nombre": "Masa de pizza", "cantidad": 1, "unidad": "ud"},
       {"nombre": "Tomate triturado", "cantidad": 200, "unidad": "g"},
       {"nombre": "Mozzarella", "cantidad": 250, "unidad": "g"},
-      {"nombre": "Albahaca fresca", "cantidad": 1, "unidad": "manojo"},
+      {"nombre": "Albahaca fresca", "cantidad": 20, "unidad": "g"},
+
       {"nombre": "Aceite de oliva virgen extra", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Orégano", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Sal", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Orégano", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 25,
     "raciones": 2,
@@ -609,14 +627,16 @@
     "ingredientes": [
       {"nombre": "Garbanzos secos", "cantidad": 250, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 3, "unidad": "dientes"},
-      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
-      {"nombre": "Cilantro fresco", "cantidad": 1, "unidad": "manojo"},
-      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Cilantro molido", "cantidad": 1, "unidad": "cucharadita"},
-      {"nombre": "Harina", "cantidad": 2, "unidad": "cucharadas"},
+      {"nombre": "Ajo", "cantidad": 15, "unidad": "g"},
+      {"nombre": "Perejil fresco", "cantidad": 25, "unidad": "g"},
+      {"nombre": "Cilantro fresco", "cantidad": 20, "unidad": "g"},
+
+      {"nombre": "Comino", "cantidad": 3, "unidad": "g"},
+      {"nombre": "Cilantro molido", "cantidad": 3, "unidad": "g"},
+      {"nombre": "Harina", "cantidad": 20, "unidad": "g"},
       {"nombre": "Aceite para freír", "cantidad": 500, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 40,
     "raciones": 4,
@@ -629,12 +649,13 @@
       {"nombre": "Obleas para empanadillas", "cantidad": 16, "unidad": "ud"},
       {"nombre": "Espinacas frescas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Queso ricotta", "cantidad": 200, "unidad": "g"},
       {"nombre": "Huevo", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Nuez moscada", "cantidad": 1, "unidad": "pizca"},
+      {"nombre": "Nuez moscada", "cantidad": 0.5, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 20, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 45,
     "raciones": 4,
@@ -648,9 +669,10 @@
       {"nombre": "Queso de cabra", "cantidad": 200, "unidad": "g"},
       {"nombre": "Espinacas baby", "cantidad": 100, "unidad": "g"},
       {"nombre": "Nueces", "cantidad": 50, "unidad": "g"},
-      {"nombre": "Miel", "cantidad": 2, "unidad": "cucharadas"},
+      {"nombre": "Miel", "cantidad": 42, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 30, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 25,
     "raciones": 4,
@@ -662,14 +684,15 @@
     "ingredientes": [
       {"nombre": "Lentejas cocidas", "cantidad": 400, "unidad": "g"},
       {"nombre": "Cebolla", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Ajo", "cantidad": 2, "unidad": "dientes"},
+      {"nombre": "Ajo", "cantidad": 10, "unidad": "g"},
       {"nombre": "Pan rallado", "cantidad": 80, "unidad": "g"},
       {"nombre": "Huevo", "cantidad": 1, "unidad": "ud"},
-      {"nombre": "Perejil fresco", "cantidad": 1, "unidad": "manojo"},
-      {"nombre": "Comino", "cantidad": 1, "unidad": "cucharadita"},
+      {"nombre": "Perejil fresco", "cantidad": 25, "unidad": "g"},
+      {"nombre": "Comino", "cantidad": 3, "unidad": "g"},
       {"nombre": "Tomate frito", "cantidad": 300, "unidad": "g"},
       {"nombre": "Aceite de oliva", "cantidad": 50, "unidad": "ml"},
-      {"nombre": "Sal y pimienta", "cantidad": 1, "unidad": "pizca"}
+      {"nombre": "Sal", "cantidad": 1, "unidad": "g"},
+      {"nombre": "Pimienta", "cantidad": 1, "unidad": "g"}
     ],
     "tiempoPreparacionMin": 40,
     "raciones": 4,

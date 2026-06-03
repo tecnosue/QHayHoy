@@ -50,6 +50,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import coil3.compose.AsyncImage
+import androidx.compose.foundation.background
 
 /**
  * Pantalla para crear o editar una receta.
@@ -278,7 +279,7 @@ private fun SeccionIngredientes(
                         onCambio = { onActualizar(indice, it) },
                         onEliminar = { onEliminar(indice) }
                     )
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(12.dp))
                 }
             }
 
@@ -295,7 +296,10 @@ private fun SeccionIngredientes(
 }
 
 /**
- * Fila editable de un ingrediente: nombre + cantidad + unidad + botón borrar.
+ * Tarjeta editable de un ingrediente: dos filas para evitar que los labels
+ * se corten en pantallas estrechas.
+ *  - Fila 1: campo Nombre (ancho completo) + botón eliminar
+ *  - Fila 2: campo Cantidad + campo Unidad (50 % / 50 %)
  */
 @Composable
 private fun FilaIngrediente(
@@ -303,41 +307,62 @@ private fun FilaIngrediente(
     onCambio: (Ingrediente) -> Unit,
     onEliminar: () -> Unit
 ) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(4.dp),
-        verticalAlignment = Alignment.CenterVertically
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.18f),
+                shape = RoundedCornerShape(10.dp)
+            )
+            .padding(horizontal = 10.dp, vertical = 6.dp),
+        verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
-        OutlinedTextField(
-            value = ingrediente.nombre,
-            onValueChange = { onCambio(ingrediente.copy(nombre = it)) },
-            label = { Text("Nombre") },
-            singleLine = true,
-            modifier = Modifier.weight(2f)
-        )
-        OutlinedTextField(
-            value = if (ingrediente.cantidad > 0.0) ingrediente.cantidad.toString() else "",
-            onValueChange = {
-                val num = it.toDoubleOrNull() ?: 0.0
-                onCambio(ingrediente.copy(cantidad = num))
-            },
-            label = { Text("Cant.") },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-            modifier = Modifier.weight(1f)
-        )
-        OutlinedTextField(
-            value = ingrediente.unidad,
-            onValueChange = { onCambio(ingrediente.copy(unidad = it)) },
-            label = { Text("Ud.") },
-            singleLine = true,
-            modifier = Modifier.weight(1f)
-        )
-        IconButton(onClick = onEliminar) {
-            Icon(
-                imageVector = Lucide.Trash2,
-                contentDescription = "Eliminar ingrediente",
-                tint = MaterialTheme.colorScheme.error
+        // --- Fila 1: nombre + borrar ---
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            OutlinedTextField(
+                value = ingrediente.nombre,
+                onValueChange = { onCambio(ingrediente.copy(nombre = it)) },
+                label = { Text("Nombre") },
+                singleLine = true,
+                modifier = Modifier.weight(1f)
+            )
+            IconButton(onClick = onEliminar) {
+                Icon(
+                    imageVector = Lucide.Trash2,
+                    contentDescription = "Eliminar ingrediente",
+                    tint = MaterialTheme.colorScheme.error
+                )
+            }
+        }
+
+        // --- Fila 2: cantidad + unidad ---
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 2.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            OutlinedTextField(
+                value = if (ingrediente.cantidad > 0.0) ingrediente.cantidad.toString() else "",
+                onValueChange = {
+                    val num = it.toDoubleOrNull() ?: 0.0
+                    onCambio(ingrediente.copy(cantidad = num))
+                },
+                label = { Text("Cantidad") },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                modifier = Modifier.weight(1f)
+            )
+            OutlinedTextField(
+                value = ingrediente.unidad,
+                onValueChange = { onCambio(ingrediente.copy(unidad = it)) },
+                label = { Text("Unidad") },
+                singleLine = true,
+                modifier = Modifier.weight(1f)
             )
         }
     }
