@@ -2,7 +2,7 @@
 
 <img width="240" height="467" alt="image" src="https://github.com/user-attachments/assets/f877cba2-570f-4f7c-860a-1cda9368a057" />
 
-
+Para ver másimagenes de la aplicación https://github.com/tecnosue/QHayHoy/blob/main/ANEXO%20III%20%E2%80%94%20Manual%20de%20usuario.pdf
 
 
 
