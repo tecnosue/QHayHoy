@@ -1,3 +1,14 @@
+
+
+<img width="240" height="467" alt="image" src="https://github.com/user-attachments/assets/f877cba2-570f-4f7c-860a-1cda9368a057" />
+
+
+
+
+
+
+
+
 This is a Kotlin Multiplatform project targeting Android.
 
 * [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
